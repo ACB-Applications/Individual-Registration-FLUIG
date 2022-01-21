@@ -1,0 +1,21 @@
+#enterprise-logo {
+	width: 222px;
+	height: 87px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#title {
+	text-align: center;
+}
+
+#subtitle {
+	font-size: 16px;
+	text-align: center;
+}
+.required:after {
+	color: red;
+	font-weight: bold;
+	content: " *";
+}
