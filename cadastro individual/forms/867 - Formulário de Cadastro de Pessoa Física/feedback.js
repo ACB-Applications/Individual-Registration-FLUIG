@@ -1,13 +1,10 @@
 function validarNomeCompletoInput() {
 
-	const
-	valorInput = document.getElementById("nomecompleto").value;
-	const
-	div = document.querySelector("#div-nome-completo");
-	const
-	span = document.querySelector("#icon-1");
-	const
-	p = document.querySelector("#help-1");
+	const valorInput = document.getElementById("nomecompleto").value;
+	const div = document.querySelector("#div-nome-completo");
+	const span = document.querySelector("#icon-1");
+	const p = document.querySelector("#help-1");
+	
 	if (valorInput == false || valorInput.length <= 3) {
 
 		if (div.classList.contains('has-error') == false) {
@@ -207,12 +204,12 @@ function validarTelefoneCelInput() {
 			span.classList.add('fluigicon');
 			span.classList.add('fluigicon-remove');
 			span.classList.add('form-control-feedback');
-			$("[name=telefone-celular]").attr('style', 'border-color:#cc3d3d;');
+			$("[name=telefonecelular]").attr('style', 'border-color:#cc3d3d;');
 			p.innerText = "É necessário que digite o número do celular.";
 		}
 
 	} else {
-		$("[name=telefone-celular]").attr('style', 'border-color:#1ab83f;');
+		$("[name=telefonecelular]").attr('style', 'border-color:#1ab83f;');
 		if (div.classList.contains('has-success') == false) {
 
 			if (div.classList.contains('has-error') == true) {
@@ -266,12 +263,12 @@ function validarTelefoneFixoInput() {
 			span.classList.add('fluigicon');
 			span.classList.add('fluigicon-remove');
 			span.classList.add('form-control-feedback');
-			$("[name=telefone-fixo]").attr('style', 'border-color:#cc3d3d;');
+			$("[name=telefonefixo]").attr('style', 'border-color:#cc3d3d;');
 			p.innerText = "É necessário que digite o número do telefone fixo.";
 		}
 
 	} else {
-		$("[name=telefone-fixo]").attr('style', 'border-color:#1ab83f;');
+		$("[name=telefonefixo]").attr('style', 'border-color:#1ab83f;');
 		if (div.classList.contains('has-success') == false) {
 
 			if (div.classList.contains('has-error') == true) {
