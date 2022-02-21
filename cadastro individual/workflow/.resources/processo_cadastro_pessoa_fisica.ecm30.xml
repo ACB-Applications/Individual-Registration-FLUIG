@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Cadastro de Pessoa Física</processId>
-      <version>8</version>
+      <version>9</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>867</formId>
@@ -538,7 +538,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>8</version>
+        <version>9</version>
         <linkSequence>11</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -549,7 +549,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>8</version>
+        <version>9</version>
         <linkSequence>20</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -560,7 +560,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>8</version>
+        <version>9</version>
         <linkSequence>20</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -571,7 +571,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>8</version>
+        <version>9</version>
         <linkSequence>20</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -582,7 +582,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>8</version>
+        <version>9</version>
         <linkSequence>24</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -593,7 +593,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>8</version>
+        <version>9</version>
         <linkSequence>24</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
