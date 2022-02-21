@@ -1,26 +1,19 @@
 <html>
 <head>
-<link type="text/css" rel="stylesheet"
-	href="/style-guide/css/fluig-style-guide.min.css" />
-<script type="text/javascript"
-	src="/portal/resources/js/jquery/jquery.js"></script>
-<script type="text/javascript"
-	src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
-<script type="text/javascript"
-	src="/portal/resources/js/mustache/mustache-min.js"></script>
-<script type="text/javascript"
-	src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
-<link type="text/css" rel="stylesheet" href="style.css" />
-
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<link type="text/css" rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 </head>
 <body>
 	<div class="fluig-style-guide">
-		<!-- Brand  
+		<!-- Brand Logo   
 		<img id="enterprise-logo" alt="Logo da Empresa" src="assets/Logo_Appian_Color_Transparent (1).png">
-		<h1 id="title"> Formul√°rio de Pr√©-Cadastro </h1>
-		<p id="subtitle"> Formul√°rio de Pr√©-Cadastro Pessoa F√≠sica </p>
+		<h1 id="title"> Formul·rio de PrÈ-Cadastro </h1>
+		<p id="subtitle"> Formul·rio de PrÈ-Cadastro Pessoa FÌsica </p>
 		-->
 		<!-- Form -->
 		<form name="form" role="form">
@@ -31,15 +24,6 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<!-- Complete Name Input -->
-						<div class="col-md-12">
-							<div class="form-group" id="div-nome-completo">
-								<label class="control-label required" for="nomecompleto">Nome Completo</label> 
-								<input type="text" class="form-control" name="nomecompleto" id="nomecompleto" placeholder="Ex.: Markoh Kravintwikz"> 
-								<span id="icon-1" class=""></span>
-								<p id="help-1" class="help-block"></p>
-							</div>
-						</div>
 						<!-- CPF Input -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-cpf">
@@ -49,8 +33,17 @@
 								<p id="help-2" class="help-block"></p>
 							</div>
 						</div>
+						<!-- Complete Name Input -->
+						<div class="col-md-9">
+							<div class="form-group" id="div-nome-completo">
+								<label class="control-label required" for="nomecompleto">Nome Completo</label> 
+								<input type="text" class="form-control" name="nomecompleto" id="nomecompleto" placeholder="Ex.: Markoh Kravintwikz"> 
+								<span id="icon-1" class=""></span>
+								<p id="help-1" class="help-block"></p>
+							</div>
+						</div>
 						<!-- E-mail Input -->
-						<div class="col-md-3">
+						<div class="col-md-6">
 							<div class="form-group" id="div-email">
 								<label class="control-label required" for="email">Email</label> 
 								<input type="text" class="form-control" name="email" id="email" placeholder="Ex.: Markoh@Email.com"> 
@@ -190,12 +183,20 @@
 						</div>
 					</div>
 					<div class="row inputAnexo">
-						<div class="col-md-4">
+						<div class="col-md-8">
 							<div class="form-group">
-								<button class="btn btn-primary" type="button" name="inputFile" id="inputFile" onclick="showCamera(this)">Comprovante de Conta Banc·ria</button>
+								<label class="control-label required" for="contacorrente">Comprovante da Conta Corrente</label>
+              					<div class="checkboox">
+              						<label>
+              							<button class="btn btn-primary" type="button" name="inputFile" id="inputFile" onclick="showCamera(this)">
+											<i class="fluigicon fluigicon-paperclip icon-sm"></i>
+									 		Anexar Arquivo
+										</button>
+              						</label>
+              						<strong>Obs:</strong> Anexe um printscreen da sua conta banc·ria
+              					</div>	
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -209,27 +210,12 @@
 				</div>
 			</div>
 		</form>
-
 	</div>
-
 	<script type="text/javascript" src="lockout.js"></script>
-
 	<script type="text/javascript" src="feedback.js"></script>
-
 	<script type="text/javascript" src="APICep.js"></script>
 	<script type="text/javascript" src="atividades.js"></script>
 	<script type="text/javascript" src="beforeSendValidate.js"></script>
-	
-	<script type="text/javascript">
-		// Masks
-		$("#CPF").mask("000.000.000-00") // CPF
-		$("#telefone-celular").mask("+00 (00) 0 0000-0000") // Telefone celular
-		$("#telefone-fixo").mask("+00 (00) 0000-0000") // Telefone fixo
-		$("#CEP").mask("00000-000") // CEP
-		$("#codigobanco").mask("000") // C√≥digo do banco
-		$("#agencia").mask("0000") // C√≥digo da Ag√™ncia
-		$("#contacorrente").mask("0000000-0") // C√≥digo da Conta Corrente
-	</script>
-
+	<script type="text/javascript" src="maskInput.js"></script>
 </body>
 </html>
