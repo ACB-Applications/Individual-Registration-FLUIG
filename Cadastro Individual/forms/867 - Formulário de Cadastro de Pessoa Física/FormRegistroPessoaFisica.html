@@ -1,0 +1,216 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<link type="text/css" rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<!-- Form -->
+		<form name="form" role="form">
+			<!-- Panel Personal Data -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Dados Pessoais</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<!-- CPF Input -->
+						<div class="col-md-3">
+							<div class="form-group" id="div-cpf">
+								<label class="control-label required" for="CPF">CPF</label> 
+								<input type="text" class="form-control" name="CPF" id="CPF" placeholder="Ex.: 081.260.788-05"> 
+					            <span id="icon-2" class=""></span>
+								<p id="help-2" class="help-block"></p>
+							</div>
+						</div>
+						<!-- Complete Name Input -->
+						<div class="col-md-9">
+							<div class="form-group" id="div-nome-completo">
+								<label class="control-label required" for="nomecompleto">Nome Completo</label> 
+								<input type="text" class="form-control" name="nomecompleto" id="nomecompleto" placeholder="Ex.: Markoh Kravintwikz"> 
+								<span id="icon-1" class=""></span>
+								<p id="help-1" class="help-block"></p>
+							</div>
+						</div>
+						<!-- E-mail Input -->
+						<div class="col-md-6">
+							<div class="form-group" id="div-email">
+								<label class="control-label required" for="email">Email</label> 
+								<input type="text" class="form-control" name="email" id="email" placeholder="Ex.: Markoh@Email.com"> 
+								<span id="icon-5"class=""></span>
+								<p id="help-5" class="help-block"></p>
+							</div>
+						</div>
+						<!-- Smartphone Contact Input -->
+						<div class="col-md-3">
+							<div class="form-group" id="div-telefone-celular">
+								<label class="control-label required" for="telefone-celular">Telefone Celular</label> 
+								<input type="text" class="form-control" name="telefonecelular" id="telefone-celular" placeholder="Ex.: +55 (31) 9 8349-3176">
+								<span id="icon-6" class=""></span>
+								<p id="help-6" class="help-block"></p>
+							</div>
+						</div>
+						<!-- Telephone Contact Input -->
+						<div class="col-md-3">
+							<div class="form-group" id="div-telefone-fixo">
+								<label class="control-label required" for="telefone-fixo">Telefone Fixo</label> 
+								<input type="text" class="form-control" name="telefonefixo" id="telefone-fixo" placeholder="Ex.: +55 (31) 3467-8965">
+								<span id="icon-7" class=""></span>
+								<p id="help-7" class="help-block"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Address Data Area -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Endereço</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<!-- CEP Input -->
+						<div class="col-md-3">
+							<div class="form-group" id="div-cep">
+								<label class="control-label required" for="CEP">CEP</label> 
+								<input type="text" class="form-control" name="CEP" id="CEP" placeholder="Ex.: 30112-010"> 
+								<span id="icon-8" class=""></span>
+								<p id="help-8" class="help-block"></p>
+							</div>
+						</div>
+						<!-- State Name Input -->
+						<div class="col-md-3">
+							<div class="form-group" id="div-estado">
+								<label class="control-label required" for="estado">Estado</label> 
+								<input type="text" class="form-control" name="estado" id="estado" placeholder="Ex.: Minas Gerais"> 
+								<span id="icon-9" class=""></span>
+								<p id="help-9" class="help-block"></p>
+							</div>
+						</div>
+						<!-- City Name Input -->
+						<div class="col-md-6">
+							<div class="form-group" id="div-cidade">
+								<label class="control-label required" for="cidade">Cidade</label> 
+								<input type="text" class="form-control" name="cidade" id="cidade" placeholder="Ex.: Belo Horizonte"> 
+								<span id="icon-10" class=""></span>
+								<p id="help-10" class="help-block"></p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<!-- District Name Input -->
+						<div class="col-md-3">
+							<div class="form-group" id="div-bairro">
+								<label class="control-label required" for="bairro">Bairro</label> 
+								<input type="text" class="form-control" name="bairro" id="bairro" placeholder="Ex.: Savassi"> 
+								<span id="icon-11" class=""></span>
+								<p id="help-11" class="help-block"></p>
+							</div>
+						</div>
+						<!-- Residence Number Input -->
+						<div class="col-md-3">
+							<div class="form-group" id="div-numero">
+								<label class="control-label required" for="numero">Número</label> 
+								<input type="text" class="form-control" name="numero" id="numero" placeholder="Ex.: 221"> 
+								<span id="icon-12" class=""></span>
+								<p id="help-12" class="help-block"></p>
+							</div>
+						</div>
+						<!-- Street Name Input -->
+						<div class="col-md-6">
+							<div class="form-group" id="div-rua">
+								<label class="control-label required" for="rua">Rua</label> 
+								<input type="text" class="form-control" name="rua" id="rua" placeholder="Ex.: Rua Antï¿½nio de Albuquerque"> 
+								<span id="icon-13" class=""></span>
+								<p id="help-13" class="help-block"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Bank Data Area -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Dados Bancários</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<!-- Name Bank Input -->
+						<div class="col-md-4">
+							<div class="form-group" id="div-nome-banco">
+								<label class="control-label required" for="nomebanco">Nome do Banco</label> 
+								<input type="text" class="form-control" name="nomebanco" id="nomebanco" placeholder="Ex.: Nubank"> 
+								<span id="icon-14" class=""></span>
+								<p id="help-14" class="help-block"></p>
+							</div>
+						</div>
+						<!-- Bank Code Input -->
+						<div class="col-md-2">
+							<div class="form-group" id="div-codigo-banco">
+								<label class="control-label required" for="codigobanco">Código do Banco</label> 
+								<input type="text" class="form-control" name="codigobanco" id="codigobanco" placeholder="Ex.: 260"> 
+								<span id="icon-15" class=""></span>
+								<p id="help-15" class="help-block"></p>
+							</div>
+						</div>
+						<!-- Agency Code Input -->
+						<div class="col-md-2">
+							<div class="form-group" id="div-agencia">
+								<label class="control-label required" for="agencia">Agência</label>
+								<input type="text" class="form-control" name="agencia" id="agencia" placeholder="Ex.: 0001"> 
+								<span id="icon-16" class=""></span>
+								<p id="help-16" class="help-block"></p>
+							</div>
+						</div>
+						<!-- Checking Account Code Input -->
+						<div class="col-md-4">
+							<div class="form-group" id="div-conta-corrente">
+								<label class="control-label required" for="contacorrente">Conta Corrente</label> 
+								<input type="text" class="form-control" name="contacorrente" id="contacorrente" placeholder="Ex.: 4569710-3"> 
+								<span id="icon-17" class=""></span>
+								<p id="help-17" class="help-block"></p>
+							</div>
+						</div>
+					</div>
+					<div class="row inputAnexo">
+						<div class="col-md-8">
+							<div class="form-group">
+								<label class="control-label required" for="contacorrente">Comprovante da Conta Corrente</label>
+              					<div class="checkboox">
+              						<label>
+              							<button class="btn btn-primary" type="button" name="inputFile" id="inputFile" onclick="showCamera(this)">
+											<i class="fluigicon fluigicon-paperclip icon-sm"></i>
+									 		Anexar Arquivo
+										</button>
+              						</label>
+              						<strong>Obs:</strong> Anexe um printscreen da sua conta bancária
+              					</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Evaluator Feedback textarea -->
+			<div class="panel panel-default painelAprovador">
+				<div class="panel-heading">
+					<h3 class="panel-title">Pontos a serem revisados</h3>
+				</div>
+				<div class="panel-body">
+					<textarea class="form-control" rows="3" name="observadorAprovador" id="observadorAprovador" placeholder="Escreva para o cliente qual informaï¿½ï¿½o estï¿½ errada!"></textarea>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="lockout.js"></script>
+	<script type="text/javascript" src="feedback.js"></script>
+	<script type="text/javascript" src="APICep.js"></script>
+	<script type="text/javascript" src="atividades.js"></script>
+	<script type="text/javascript" src="beforeSendValidate.js"></script>
+	<script type="text/javascript" src="maskInput.js"></script>
+</body>
+</html>
