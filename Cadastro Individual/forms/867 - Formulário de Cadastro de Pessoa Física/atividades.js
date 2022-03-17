@@ -14,11 +14,17 @@ function atividades(ATIVIDADE_ATUAL) {
 	
 	if (ATIVIDADE_ATUAL == 12 || ATIVIDADE_ATUAL == 0) {
 		sairCampo();
-		esconderAprovador()
+		esconderAprovador();
+		esconderCampoNomeAbreviado();
 		regrasDeCampos();
 	} else if (ATIVIDADE_ATUAL == 5) {
 		aparecerAprovador();
+		aparecerCampoNomeAbreviado();
 		esconderinputAnexo();
+		
+		regraDosCamposAvaliador();
+		sairCampoNomeAbreviado();
+		
 	} else if (ATIVIDADE_ATUAL == 9) {
 		sairCampo();
 		regrasDeCampos();
@@ -71,6 +77,17 @@ function regrasDeCampos() {
 
 }
 
+function regraDosCamposAvaliador() {
+	
+	$("[name=nomeabreviado]").on("keyup", function() {
+		validarNomeAbreviado();
+	}
+	
+	$("[name=nomeabreviado]").on("blur", function() {
+		validarNomeAbreviado();
+	}
+}
+
 function esconderinputAnexo() {
 	$(".inputAnexo").hide();
 }
@@ -83,13 +100,27 @@ function esconderAprovador() {
 	$(".painelAprovador").hide();
 }
 
+function esconderCampoNomeAbreviado() {
+	$(".CampoNomeAbreviado").hide();
+}
+
+function aparecerCampoNomeAbreviado() {
+	$(".CampoNomeAbreviado").show();
+}
+
 function sairCampo() {
 	$(
-		"[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
+		"[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP]")
 		.on("blur", function(eval) {
 			var nomeCampo = eval.currentTarget.name
 			setBordaCinza(nomeCampo)
 	})	
+}
+
+function sairCampoNomeAbreviado() {
+	$("[name=nomeabreviado]").on("blur", function(eval) {
+		var nomeCampo = eval.currentTarget.name
+		setBordaCinza(nomeCampo)
 }
 
 function setBordaCinza(nomeCampo) {

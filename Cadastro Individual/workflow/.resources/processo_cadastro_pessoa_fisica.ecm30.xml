@@ -459,8 +459,8 @@
         <processId>processo_cadastro_pessoa_fisica</processId>
         <version>1</version>
       </workflowProcessEventPK>
-      <eventDescription>function servicetask19() {
-	true
+      <eventDescription>function servicetask19() {&#xd;
+	true&#xd;
 }</eventDescription>
     </WorkflowProcessEvent>
   </list>
