@@ -17,9 +17,12 @@ function atividades(ATIVIDADE_ATUAL) {
 		esconderAprovador();
 		esconderCampoNomeAbreviado();
 		regrasDeCampos();
+		
 	} else if (ATIVIDADE_ATUAL == 5) {
+		
 		aparecerAprovador();
 		aparecerCampoNomeAbreviado();
+		
 		esconderinputAnexo();
 		
 		regraDosCamposAvaliador();
@@ -28,6 +31,8 @@ function atividades(ATIVIDADE_ATUAL) {
 	} else if (ATIVIDADE_ATUAL == 9) {
 		sairCampo();
 		regrasDeCampos();
+		
+		esconderCampoNomeAbreviado();
 	}
 	
 }
@@ -74,18 +79,7 @@ function regrasDeCampos() {
 			validarAgenciaInput();
 			validarContaCorrenteInput();
 	});
-
-}
-
-function regraDosCamposAvaliador() {
 	
-	$("[name=nomeabreviado]").on("keyup", function() {
-		validarNomeAbreviado();
-	}
-	
-	$("[name=nomeabreviado]").on("blur", function() {
-		validarNomeAbreviado();
-	}
 }
 
 function esconderinputAnexo() {
@@ -100,14 +94,6 @@ function esconderAprovador() {
 	$(".painelAprovador").hide();
 }
 
-function esconderCampoNomeAbreviado() {
-	$(".CampoNomeAbreviado").hide();
-}
-
-function aparecerCampoNomeAbreviado() {
-	$(".CampoNomeAbreviado").show();
-}
-
 function sairCampo() {
 	$(
 		"[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP]")
@@ -117,17 +103,39 @@ function sairCampo() {
 	})	
 }
 
-function sairCampoNomeAbreviado() {
-	$("[name=nomeabreviado]").on("blur", function(eval) {
-		var nomeCampo = eval.currentTarget.name
-		setBordaCinza(nomeCampo)
-}
-
 function setBordaCinza(nomeCampo) {
 	if ($("[name=" + nomeCampo + "]").val() == "") {
 		$("[name=" + nomeCampo + "]").attr("style", "border-color:red;");
 	}
 }
+
 function showCamera(param) {
 	JSInterface.showCamera("Comprovante bancário");
+}
+
+
+function regraDosCamposAvaliador() {
+	
+	$("[name=nomeabreviado]").on("keyup", function() {
+		validarNomeAbreviado();
+	});
+	
+	$("[name=nomeabreviado]").on("blur", function() {
+		validarNomeAbreviado();
+	});
+}
+
+function sairCampoNomeAbreviado() {
+	$("[name=nomeabreviado]").on("blur", function(eval) {
+		var nomeCampo = eval.currentTarget.name
+		setBordaCinza(nomeCampo)
+	})
+}
+
+function esconderCampoNomeAbreviado() {
+	$(".CampoNomeAbreviado").hide();
+}
+
+function aparecerCampoNomeAbreviado() {
+	$(".CampoNomeAbreviado").show();
 }
