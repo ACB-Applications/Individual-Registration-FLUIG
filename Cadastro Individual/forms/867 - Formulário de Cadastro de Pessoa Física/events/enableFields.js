@@ -14,6 +14,7 @@ function bloquearCampoAprovador(form) {
 	form.setEnabled("observadorAprovador", false);
 }
 function bloquearCampoInicial(form) {
+	
 	form.setEnabled("nomecompleto", false);
 	form.setEnabled("CPF", false);
 	form.setEnabled("email", false);
