@@ -2,9 +2,11 @@ var msg = "";
 var beforeSendValidate = function(numState, nextState) {
 
 	var ATIVIDADE_ATUAL = numState;
+	var PROXIMA_ATIVIDADE = nextState;
 	var lineBreaker = "<br>";
 	var msg = "";
 	var vazio = " não pode ser vazio<br>";
+	
 	if (ATIVIDADE_ATUAL == 12 || ATIVIDADE_ATUAL == 0  || ATIVIDADE_ATUAL == 9) {
 
 		var validaCampo = $("[name=nomecompleto]").val();
@@ -126,7 +128,8 @@ var beforeSendValidate = function(numState, nextState) {
 			setBordaVermelha(nomeCampo, "icon-17", "div-conta-corrente")
 			msg += "<b>Conta Corrente  </b> " + vazio;
 		}
-	} else if (ATIVIDADE_ATUAL == 5) {
+		
+	} else if (PROXIMA_ATIVIDADE == 9) {
 
 		var validaCampo = $("[name=observadorAprovador]").val();
 		if (validaCampo == "") {
