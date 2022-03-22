@@ -13,6 +13,7 @@ function atividadeAtual() {
 function atividades(ATIVIDADE_ATUAL) {
 	
 	if (ATIVIDADE_ATUAL == 12 || ATIVIDADE_ATUAL == 0) {
+		
 		sairCampo();
 		esconderAprovador();
 		esconderCampoNomeAbreviado();
@@ -29,6 +30,7 @@ function atividades(ATIVIDADE_ATUAL) {
 		sairCampoNomeAbreviado();
 		
 	} else if (ATIVIDADE_ATUAL == 9) {
+		
 		sairCampo();
 		regrasDeCampos();
 		
@@ -39,8 +41,7 @@ function atividades(ATIVIDADE_ATUAL) {
 
 function regrasDeCampos() {
 	
-	$(
-		"[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
+	$("[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
 		.on("keyup", function() {
 			validarNomeCompletoInput();
 			validarCPFInput();
@@ -59,8 +60,8 @@ function regrasDeCampos() {
 			validarAgenciaInput();
 			validarContaCorrenteInput();
 	});
-	$(
-		"[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
+	
+	$("[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
 		.on("blur", function() {
 			validarNomeCompletoInput();
 			validarCPFInput();
@@ -79,7 +80,6 @@ function regrasDeCampos() {
 			validarAgenciaInput();
 			validarContaCorrenteInput();
 	});
-	
 }
 
 function esconderinputAnexo() {
@@ -95,12 +95,13 @@ function esconderAprovador() {
 }
 
 function sairCampo() {
-	$(
-		"[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP]")
+	
+	$("[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP]")
 		.on("blur", function(eval) {
 			var nomeCampo = eval.currentTarget.name
 			setBordaCinza(nomeCampo)
-	})	
+	});
+	
 }
 
 function setBordaCinza(nomeCampo) {
