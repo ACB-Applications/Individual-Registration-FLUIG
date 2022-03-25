@@ -111,7 +111,7 @@ function setBordaCinza(nomeCampo) {
 }
 
 function showCamera(param) {
-	JSInterface.showCamera("Comprovante bancário");
+	JSInterface.showCamera();
 }
 
 
