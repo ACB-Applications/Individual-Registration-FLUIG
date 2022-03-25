@@ -135,14 +135,19 @@ var beforeSendValidate = function(numState, nextState) {
 		if (validaCampo == "") {
 			msg += "<b>Pontos a serem revisados  </b> " + vazio;
 		}
+	} else if (PROXIMA_ATIVIDADE == 19) {
+
+		var validaCampo = $("[name=nomeabreviado]").val();
+		if (validaCampo == "") {
+			msg += "<b>Nome Abreviado  </b> " + vazio;
+		}
 	}
 
 	if (msg != "") {
-		FLUIGC.toast({
-			message : msg,
-			type : 'danger'
-		});
-		return false
+		
+		throw msg;
+		
+		
 	}
 }
 
