@@ -1808,5 +1808,61 @@
     </void>
    </array>
   </void>
+  <void method="put">
+   <string>camposFormulario, documentoId = 867</string>
+   <array class="java.lang.String" length="17">
+    <void index="0">
+     <string>agencia</string>
+    </void>
+    <void index="1">
+     <string>bairro</string>
+    </void>
+    <void index="2">
+     <string>CEP</string>
+    </void>
+    <void index="3">
+     <string>cidade</string>
+    </void>
+    <void index="4">
+     <string>codigobanco</string>
+    </void>
+    <void index="5">
+     <string>contacorrente</string>
+    </void>
+    <void index="6">
+     <string>CPF</string>
+    </void>
+    <void index="7">
+     <string>email</string>
+    </void>
+    <void index="8">
+     <string>estado</string>
+    </void>
+    <void index="9">
+     <string>nomeabreviado</string>
+    </void>
+    <void index="10">
+     <string>nomebanco</string>
+    </void>
+    <void index="11">
+     <string>nomecompleto</string>
+    </void>
+    <void index="12">
+     <string>numero</string>
+    </void>
+    <void index="13">
+     <string>observadorAprovador</string>
+    </void>
+    <void index="14">
+     <string>rua</string>
+    </void>
+    <void index="15">
+     <string>telefonecelular</string>
+    </void>
+    <void index="16">
+     <string>telefonefixo</string>
+    </void>
+   </array>
+  </void>
  </object>
 </java>

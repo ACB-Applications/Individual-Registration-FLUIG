@@ -13,23 +13,35 @@ function atividadeAtual() {
 function atividades(ATIVIDADE_ATUAL) {
 	
 	if (ATIVIDADE_ATUAL == 12 || ATIVIDADE_ATUAL == 0) {
+		
 		sairCampo();
-		esconderAprovador()
+		esconderAprovador();
+		esconderCampoNomeAbreviado();
 		regrasDeCampos();
+		
 	} else if (ATIVIDADE_ATUAL == 5) {
+		
 		aparecerAprovador();
+		aparecerCampoNomeAbreviado();
+		
 		esconderinputAnexo();
+		
+		regraDosCamposAvaliador();
+		sairCampoNomeAbreviado();
+		
 	} else if (ATIVIDADE_ATUAL == 9) {
+		
 		sairCampo();
 		regrasDeCampos();
+		
+		esconderCampoNomeAbreviado();
 	}
 	
 }
 
 function regrasDeCampos() {
 	
-	$(
-		"[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
+	$("[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
 		.on("keyup", function() {
 			validarNomeCompletoInput();
 			validarCPFInput();
@@ -48,8 +60,8 @@ function regrasDeCampos() {
 			validarAgenciaInput();
 			validarContaCorrenteInput();
 	});
-	$(
-		"[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
+	
+	$("[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
 		.on("blur", function() {
 			validarNomeCompletoInput();
 			validarCPFInput();
@@ -68,7 +80,6 @@ function regrasDeCampos() {
 			validarAgenciaInput();
 			validarContaCorrenteInput();
 	});
-
 }
 
 function esconderinputAnexo() {
@@ -84,12 +95,13 @@ function esconderAprovador() {
 }
 
 function sairCampo() {
-	$(
-		"[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP], [name=nomeabreviado]")
+	
+	$("[name=contacorrente],[name=agencia],[name=codigobanco],[name=nomebanco],[name=rua],[name=numero],[name=bairro],[name=cidade],[name=estado],[name=nomecompleto],[name=CPF],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP]")
 		.on("blur", function(eval) {
 			var nomeCampo = eval.currentTarget.name
 			setBordaCinza(nomeCampo)
-	})	
+	});
+	
 }
 
 function setBordaCinza(nomeCampo) {
@@ -97,6 +109,34 @@ function setBordaCinza(nomeCampo) {
 		$("[name=" + nomeCampo + "]").attr("style", "border-color:red;");
 	}
 }
+
 function showCamera(param) {
 	JSInterface.showCamera("Comprovante bancário");
+}
+
+
+function regraDosCamposAvaliador() {
+	
+	$("[name=nomeabreviado]").on("keyup", function() {
+		validarNomeAbreviado();
+	});
+	
+	$("[name=nomeabreviado]").on("blur", function() {
+		validarNomeAbreviado();
+	});
+}
+
+function sairCampoNomeAbreviado() {
+	$("[name=nomeabreviado]").on("blur", function(eval) {
+		var nomeCampo = eval.currentTarget.name
+		setBordaCinza(nomeCampo)
+	})
+}
+
+function esconderCampoNomeAbreviado() {
+	$(".CampoNomeAbreviado").hide();
+}
+
+function aparecerCampoNomeAbreviado() {
+	$(".CampoNomeAbreviado").show();
 }
