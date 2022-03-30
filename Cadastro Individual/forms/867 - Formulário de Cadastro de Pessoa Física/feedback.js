@@ -1,10 +1,10 @@
 function validarNomeCompletoInput() {
-  const valorInput = document.getElementById("nomecompleto").value;
+  // const valorInput = document.getElementById("nomecompleto").value;
   const div = document.querySelector("#div-nome-completo");
   const span = document.querySelector("#icon-1");
   const p = document.querySelector("#help-1");
 
-  if (valorInput == false || valorInput.length <= 3) {
+  if ($("[name=nomecompleto]").value == false || valorInput.length <= 3) {
     if (div.classList.contains("has-error") == false) {
       if (div.classList.contains("has-success") == true) {
         div.classList.remove("has-success");
