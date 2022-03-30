@@ -8,21 +8,21 @@
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
 	<div class="fluig-style-guide">
 		<!-- Form -->
 		<form name="form" role="form">
-			<!-- Panel Personal Data -->
+			<!-- Panel Dados Pessoais -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Dados Pessoais</h3>
 				</div>
 				<div class="panel-body">
+					<!-- row -->
 					<div class="row">
-						<!-- CPF Input -->
+						<!-- Input CPF -->
 						<div class="col-md-4">
 							<div class="form-group" id="div-cpf">
 								<label class="control-label required" for="CPF">CPF</label>
@@ -31,7 +31,7 @@
 								<p id="help-2" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Complete Name Input -->
+						<!-- Input Nome Completo -->
 						<div class="col-md-4">
 							<div class="form-group" id="div-nome-completo">
 								<label class="control-label required" for="nomecompleto">Nome Completo</label>
@@ -41,7 +41,7 @@
 								<p id="help-1" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Short Name Input -->
+						<!-- Input Nome Abreviado -->
 						<div class="col-md-4 CampoNomeAbreviado">
 							<div class="form-group" id="div-nome-abreviado">
 								<label class="control-label required" for="nome-abreviado">Nome Abreviado</label>
@@ -51,7 +51,10 @@
 								<p id="help-18" class="help-block"></p>
 							</div>
 						</div>
-						<!-- E-mail Input -->
+					</div>
+					<!-- row -->
+					<div class="row">
+						<!-- Input E-mail -->
 						<div class="col-md-6">
 							<div class="form-group" id="div-email">
 								<label class="control-label required" for="email">Email</label>
@@ -60,7 +63,7 @@
 								<p id="help-5" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Smartphone Contact Input -->
+						<!-- Input Telefone Celular -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-telefone-celular">
 								<label class="control-label required" for="telefone-celular">Telefone Celular</label>
@@ -70,7 +73,7 @@
 								<p id="help-6" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Telephone Contact Input -->
+						<!-- Input Telefone Fixo -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-telefone-fixo">
 								<label class="control-label required" for="telefone-fixo">Telefone Fixo</label>
@@ -83,14 +86,15 @@
 					</div>
 				</div>
 			</div>
-			<!-- Address Data Area -->
+			<!-- Panel Endereço -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Endereço</h3>
 				</div>
 				<div class="panel-body">
+					<!-- row -->
 					<div class="row">
-						<!-- CEP Input -->
+						<!-- Input CEP -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-cep">
 								<label class="control-label required" for="CEP">CEP</label>
@@ -99,7 +103,7 @@
 								<p id="help-8" class="help-block"></p>
 							</div>
 						</div>
-						<!-- State Name Input -->
+						<!-- Input Nome do Estado -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-estado">
 								<label class="control-label required" for="estado">Estado</label>
@@ -108,7 +112,7 @@
 								<p id="help-9" class="help-block"></p>
 							</div>
 						</div>
-						<!-- City Name Input -->
+						<!-- Input Nome da Cidade -->
 						<div class="col-md-6">
 							<div class="form-group" id="div-cidade">
 								<label class="control-label required" for="cidade">Cidade</label>
@@ -118,8 +122,9 @@
 							</div>
 						</div>
 					</div>
+					<!-- row -->
 					<div class="row">
-						<!-- District Name Input -->
+						<!-- Input Nome do Bairro -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-bairro">
 								<label class="control-label required" for="bairro">Bairro</label>
@@ -128,7 +133,7 @@
 								<p id="help-11" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Residence Number Input -->
+						<!-- Input Número da Residência -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-numero">
 								<label class="control-label required" for="numero">Número</label>
@@ -137,7 +142,7 @@
 								<p id="help-12" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Street Name Input -->
+						<!-- Input Nome da Rua -->
 						<div class="col-md-6">
 							<div class="form-group" id="div-rua">
 								<label class="control-label required" for="rua">Rua</label>
@@ -150,14 +155,15 @@
 					</div>
 				</div>
 			</div>
-			<!-- Bank Data Area -->
+			<!-- Panel Dados Bancários -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Dados Bancários</h3>
 				</div>
 				<div class="panel-body">
+					<!-- row -->
 					<div class="row">
-						<!-- Name Bank Input -->
+						<!-- Input Nome do Banco -->
 						<div class="col-md-4">
 							<div class="form-group" id="div-nome-banco">
 								<label class="control-label required" for="nomebanco">Nome do Banco</label>
@@ -166,7 +172,7 @@
 								<p id="help-14" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Bank Code Input -->
+						<!-- Input Código do Banco -->
 						<div class="col-md-2">
 							<div class="form-group" id="div-codigo-banco">
 								<label class="control-label required" for="codigobanco">Código do Banco</label>
@@ -175,7 +181,7 @@
 								<p id="help-15" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Agency Code Input -->
+						<!-- Input Código da Agência -->
 						<div class="col-md-2">
 							<div class="form-group" id="div-agencia">
 								<label class="control-label required" for="agencia">Agência</label>
@@ -184,7 +190,7 @@
 								<p id="help-16" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Checking Account Code Input -->
+						<!-- Input Conta Corrente -->
 						<div class="col-md-4">
 							<div class="form-group" id="div-conta-corrente">
 								<label class="control-label required" for="contacorrente">Conta Corrente</label>
@@ -195,6 +201,7 @@
 							</div>
 						</div>
 					</div>
+					<!-- Input Anexo de documento -->
 					<div class="row inputAnexo">
 						<div class="col-md-8">
 							<div class="form-group">
@@ -214,7 +221,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Evaluator Feedback textarea -->
+			<!-- Panel Feedback do Avaliador -->
 			<div class="panel panel-default painelAprovador">
 				<div class="panel-heading">
 					<h3 class="panel-title">Pontos a serem revisados</h3>
@@ -233,6 +240,7 @@
 					<textarea class="form-control" rows="3" name="retornoIntegracao" id="retornoIntegracao" readonly></textarea>
 				</div>
 			</div>
+
 		</form>
 	</div>
 </body>
@@ -242,5 +250,6 @@
 <script type="text/javascript" src="atividades.js"></script>
 <script type="text/javascript" src="beforeSendValidate.js"></script>
 <script type="text/javascript" src="maskInput.js"></script>
+<script type="text/javascript" src="emailValidator.js"></script>
 
 </html>
