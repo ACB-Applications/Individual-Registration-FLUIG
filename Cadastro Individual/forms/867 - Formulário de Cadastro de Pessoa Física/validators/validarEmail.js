@@ -1,5 +1,18 @@
+function email() {
+  $("[id=email]").on("keyup", function (event) {
+    var regex = new RegExp("/^([.a-zA-Z0-9]+)@([a-zA-Z]+).([a-zA-Z]){2,8}$/");
+    var regexo = new RegExp(
+      "/^([.a-zA-Z0-9]+)@([a-zA-Z]+).([a-zA-Z]){2,3}.[a-zA-Z]{1,3}$/"
+    );
+
+    if (regex.test(event.val()) || regexo.test(event.val())) {
+      return false;
+    }
+  });
+}
+
 function validarEmailInput() {
-  if ($("[id=email]").val() == false || $("[id=email]").val().length <= 5) {
+  if ($("[id=email]").val() == false || $("[id=email]").length <= 5) {
     if ($("[id=div-email]").hasClass("has-error") == false) {
       if ($("[id=div-email]").hasClass("has-success") == true) {
         $("[id=div-email],[id=icon-5]").removeClass(
