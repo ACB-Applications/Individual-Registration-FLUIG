@@ -11,7 +11,7 @@ function validarAgenciaInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=agencia]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-16]").text("Digite o código do banco.");
+      $("[id=help-16]").text("Digite o código da agência.");
     }
   } else {
     $("[name=agencia]").attr("style", "border-color:#1ab83f;");
