@@ -13,21 +13,7 @@ function atividadeAtual() {
 function atividades(ATIVIDADE_ATUAL) {
   if (ATIVIDADE_ATUAL == 12 || ATIVIDADE_ATUAL == 0) {
     sairCampo();
-    regrasCampoNomeCompleto();
-    regrasCampoCPF();
-    regrasCampoEmail();
-    regrasCampoTelefoneCelular();
-    regrasCampoTelefoneFixo();
-    regrasCampoCEP();
-    regrasCampoEstado();
-    regrasCampoCidade();
-    regrasCampoBairro();
-    regrasCampoNumero();
-    regrasCampoRua();
-    regrasCampoNomeBanco();
-    regrasCampoCodigoBanco();
-    regrasCampoAgencia();
-    regrasCampoContaCorrente();
+    feedbackToClient();
     esconderAprovador();
     esconderCampoNomeAbreviado();
   } else if (ATIVIDADE_ATUAL == 5) {
@@ -38,12 +24,31 @@ function atividades(ATIVIDADE_ATUAL) {
     sairCampoNomeAbreviado();
   } else if (ATIVIDADE_ATUAL == 9) {
     sairCampo();
-    regrasDeCampos();
+    feedbackToClient();
     esconderCampoNomeAbreviado();
   }
 }
 
-// Funções de chamada de feedback dos inputs
+// Agrupa as functions responsáveis por fazer o feedback visual do campo, para simplificar a chamada na condicional.
+function feedbackToClient() {
+  regrasCampoNomeCompleto();
+  regrasCampoCPF();
+  regrasCampoEmail();
+  regrasCampoTelefoneCelular();
+  regrasCampoTelefoneFixo();
+  regrasCampoCEP();
+  regrasCampoEstado();
+  regrasCampoCidade();
+  regrasCampoBairro();
+  regrasCampoNumero();
+  regrasCampoRua();
+  regrasCampoNomeBanco();
+  regrasCampoCodigoBanco();
+  regrasCampoAgencia();
+  regrasCampoContaCorrente();
+}
+
+// Funções de chamada de feedback visual dos inputs
 function regrasCampoCPF() {
   $("[name=CPF]").on("keyup", function () {
     validarCPFInput();
@@ -231,7 +236,7 @@ function showCamera(param) {
   JSInterface.showCamera();
 }
 
-// Bloquear input
+// Colorir input de cinza
 function setBordaCinza(nomeCampo) {
   if ($("[name=" + nomeCampo + "]").val() == "") {
     $("[name=" + nomeCampo + "]").attr("style", "border-color:red;");
