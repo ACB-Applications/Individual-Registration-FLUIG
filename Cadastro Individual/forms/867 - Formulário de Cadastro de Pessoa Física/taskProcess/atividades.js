@@ -22,6 +22,7 @@ function atividades(ATIVIDADE_ATUAL) {
     esconderinputAnexo();
     regrasCampoAbreviado();
     sairCampoNomeAbreviado();
+    esconderCardInstrucao();
   } else if (ATIVIDADE_ATUAL == 9) {
     sairCampo();
     feedbackToClient();
@@ -221,6 +222,10 @@ function aparecerAprovador() {
 // Funções para ocultar os input
 function esconderCampoNomeAbreviado() {
   $(".CampoNomeAbreviado").hide();
+}
+
+function esconderCardInstrucao() {
+  $(".card-personalizado").hide();
 }
 
 function esconderAprovador() {
