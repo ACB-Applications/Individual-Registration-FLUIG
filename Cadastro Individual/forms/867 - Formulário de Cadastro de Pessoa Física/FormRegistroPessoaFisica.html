@@ -27,8 +27,12 @@
 					</p>
 					<ol class="card-text">
 						<li> Preencha todos os campos;</li>
-						<li> Digite o nome completo com letra Maiúscula no início;</li>
-						<li> Digite somente os números nos campos do CPF, Telefone, CEP, Código, Agência, Conta Corrente;</li>
+						<li> Digite o nome completo com letra <strong>Maiúscula</strong> no início;</li>
+						<li>
+							Digite somente os números nos campos: <strong>CPF, Telefone, CEP, Código, Agência, Conta
+								Corrente</strong>;
+						</li>
+						<li>Fique atento aos feedbacks dos campos;</li>
 					</ol>
 				</div>
 			</div>
@@ -41,7 +45,7 @@
 					<!-- row -->
 					<div class="row">
 						<!-- Input CPF -->
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<div class="form-group" id="div-cpf">
 								<label class="control-label required" for="CPF">CPF</label>
 								<input type="text" class="form-control" name="CPF" id="CPF" placeholder="Ex.: 081.260.788-05">
@@ -53,7 +57,7 @@
 					<!-- row -->
 					<div class="row">
 						<!-- Input Nome Completo -->
-						<div class="col-md-8">
+						<div class="col-md-7">
 							<div class="form-group" id="div-nome-completo">
 								<label class="control-label required" for="nomecompleto">Nome Completo</label>
 								<input type="text" class="form-control" name="nomecompleto" id="nomecompleto"
@@ -63,7 +67,7 @@
 							</div>
 						</div>
 						<!-- Input Nome Abreviado -->
-						<div class="col-md-4 CampoNomeAbreviado">
+						<div class="col-md-5 CampoNomeAbreviado">
 							<div class="form-group" id="div-nome-abreviado">
 								<label class="control-label required" for="nome-abreviado">Nome Abreviado</label>
 								<input type="text" maxlength="12" class="form-control" name="nomeabreviado" id="nome-abreviado"
@@ -252,16 +256,14 @@
 						placeholder="Escreva para o cliente qual informação está errada!"></textarea>
 				</div>
 			</div>
-
-			<div class="panel panel-default painelAprovador">
+			<!-- <div class="panel panel-default painelAprovador">
 				<div class="panel-heading">
 					<h3 class="panel-title">Integração Datasul</h3>
 				</div>
 				<div class="panel-body">
 					<textarea class="form-control" rows="3" name="retornoIntegracao" id="retornoIntegracao" readonly></textarea>
 				</div>
-			</div>
-
+			</div> -->
 		</form>
 	</div>
 </body>
