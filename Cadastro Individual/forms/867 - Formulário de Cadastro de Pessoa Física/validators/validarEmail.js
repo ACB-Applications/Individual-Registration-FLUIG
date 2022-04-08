@@ -1,5 +1,15 @@
 function validarEmailInput() {
-  if ($("[id=email]").val() == false || $("[id=email]").val().length <= 5) {
+  var emailValido = false;
+  const regex = /^([._a-zA-Z0-9]+)@([a-zA-Z]+).([a-zA-Z]){2,8}$/;
+  const regexo = /^([._a-zA-Z0-9]+)@([a-zA-Z]+).([a-zA-Z]){2,3}.[a-zA-Z]{1,3}$/;
+
+  if (regex.test($("[id=email]").val()) || regexo.test($("[id=email]").val())) {
+    emailValido = true;
+  } else {
+    emailInput = false;
+  }
+
+  if (emailValido == false) {
     if ($("[id=div-email]").hasClass("has-error") == false) {
       if ($("[id=div-email]").hasClass("has-success") == true) {
         $("[id=div-email],[id=icon-5]").removeClass(
@@ -11,7 +21,7 @@ function validarEmailInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=email]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-5]").text("É necessário que digite o E-mail.");
+      $("[id=help-5]").text("É necessário que digite um E-mail válido.");
     }
   } else {
     $("[name=email]").attr("style", "border-color:#1ab83f;");
