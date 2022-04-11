@@ -20,35 +20,20 @@ function servicetask19() {
   try {
     var clientService = fluigAPI.getAuthorizeClientService();
 
-    // var dados = {
-    //   cCgc: v_CPF,
-    //   cNome: v_nomecompleto,
-    //   nomeAbrev: v_nomeabreviado,
-    //   cEmail: v_email,
-    //   cFoneCel: v_telefonecelular,
-    //   cFoneFixo: v_telefonefixo,
-    //   iCep: v_CEP,
-    //   cUF: v_estado,
-    //   cCicade: v_cidade,
-    //   cBairro: v_bairro,
-    //   iNum: v_numero,
-    //   cRua: v_rua,
-    // };
-
-    // var dados = {
-    //   cCgc: "34053111013",
-    //   cNome: "Teste fluig fixo",
-    //   nomeAbrev: "CHE.GUE",
-    //   cEmail: "che.guevara@totvs.com.br",
-    //   cFoneCel: "47991285672",
-    //   cFoneFixo: "4612349876",
-    //   iCep: 89665890,
-    //   cUF: "SC",
-    //   cCicade: "Joinville",
-    //   cBairro: "Costa e Silva",
-    //   iNum: 150,
-    //   cRua: "Rui Barbosa",
-    // };
+    var dados = {
+      cCgc: v_CPF,
+      cNome: v_nomecompleto,
+      nomeAbrev: v_nomeabreviado,
+      cEmail: v_email,
+      cFoneCel: v_telefonecelular,
+      cFoneFixo: v_telefonefixo,
+      iCep: v_CEP,
+      cUF: v_estado,
+      cCicade: v_cidade,
+      cBairro: v_bairro,
+      iNum: v_numero,
+      cRua: v_rua,
+    };
 
     hAPI.setTaskComments(
       getValue("WKUser"),
