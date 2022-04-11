@@ -14,9 +14,7 @@ function validarTelefoneFixoInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=telefonefixo]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-7]").text(
-        "É necessário que digite o número do telefone fixo."
-      );
+      $("[id=help-7]").text("Digite o número do telefone fixo.");
     }
   } else {
     $("[name=telefonefixo]").attr("style", "border-color:#1ab83f;");

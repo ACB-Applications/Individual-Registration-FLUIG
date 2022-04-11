@@ -11,7 +11,7 @@ function validarBairroInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=bairro]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-11]").text("Digite o nome do estado.");
+      $("[id=help-11]").text("Digite o nome do bairro.");
     }
   } else {
     $("[name=bairro]").attr("style", "border-color:#1ab83f;");

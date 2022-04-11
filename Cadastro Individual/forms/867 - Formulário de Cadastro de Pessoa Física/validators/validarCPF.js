@@ -11,7 +11,7 @@ function validarCPFInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=CPF]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-2]").text("É necessário que digite o CPF.");
+      $("[id=help-2]").text("Digite o CPF.");
     }
   } else {
     $("[name=CPF]").attr("style", "border-color:#1ab83f;");

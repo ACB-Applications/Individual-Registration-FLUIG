@@ -11,7 +11,7 @@ function validarCEPInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=CEP]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-8]").text("É necessário que digite o CEP.");
+      $("[id=help-8]").text("Digite o CEP.");
     }
   } else {
     $("[name=CEP]").attr("style", "border-color:#1ab83f;");

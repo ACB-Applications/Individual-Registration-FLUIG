@@ -21,7 +21,7 @@ function validarEmailInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=email]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-5]").text("É necessário que digite um E-mail válido.");
+      $("[id=help-5]").text("Digite um e-mail válido.");
     }
   } else {
     $("[name=email]").attr("style", "border-color:#1ab83f;");

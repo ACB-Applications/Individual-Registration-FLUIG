@@ -1,6 +1,6 @@
 function validarCodigoBancoInput() {
   if (
-    $("[id=codigobanco]").val() == false ||
+    $("[id=codigobanco]").val() == false &&
     $("[id=codigobanco]").val().length <= 2
   ) {
     if ($("[id=codigo-banco]").hasClass("has-error") == false) {

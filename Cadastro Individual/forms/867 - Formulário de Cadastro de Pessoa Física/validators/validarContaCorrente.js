@@ -14,7 +14,7 @@ function validarContaCorrenteInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=contacorrente]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-17]").text("Digite a numeração da conta corrente.");
+      $("[id=help-17]").text("Digite os números da conta corrente.");
     }
   } else {
     $("[name=contacorrente]").attr("style", "border-color:#1ab83f;");

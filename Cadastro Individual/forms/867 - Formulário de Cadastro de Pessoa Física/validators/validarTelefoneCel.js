@@ -14,7 +14,7 @@ function validarTelefoneCelInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=telefonecelular]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-6]").text("É necessário que digite o número do celular.");
+      $("[id=help-6]").text("Digite o número do celular.");
     }
   } else {
     $("[name=telefonecelular]").attr("style", "border-color:#1ab83f;");

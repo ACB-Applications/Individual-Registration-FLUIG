@@ -14,7 +14,7 @@ function validarNomeCompletoInput() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=nomecompleto]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-1]").text("É necessário que digite o nome completo.");
+      $("[id=help-1]").text("Digite o nome completo.");
     }
   } else {
     $("[name=nomecompleto]").attr("style", "border-color:#1ab83f;");
