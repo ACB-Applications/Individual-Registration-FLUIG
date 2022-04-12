@@ -21,18 +21,22 @@ function servicetask19() {
     var clientService = fluigAPI.getAuthorizeClientService();
 
     var dados = {
-      cCgc: v_CPF,
-      cNome: v_nomecompleto,
-      nomeAbrev: v_nomeabreviado,
-      cEmail: v_email,
-      cFoneCel: v_telefonecelular,
-      cFoneFixo: v_telefonefixo,
-      iCep: v_CEP,
-      cUF: v_estado,
-      cCicade: v_cidade,
-      cBairro: v_bairro,
-      iNum: v_numero,
-      cRua: v_rua,
+      "tt-fornecedor": [
+        {
+          cCgc: v_CPF,
+          cNome: v_nomecompleto,
+          nomeAbrev: v_nomeabreviado,
+          cEmail: v_email,
+          cFoneCel: v_telefonecelular,
+          cFoneFixo: v_telefonefixo,
+          iCep: v_CEP,
+          cUF: v_estado,
+          cCicade: v_cidade,
+          cBairro: v_bairro,
+          iNum: v_numero,
+          cRua: v_rua,
+        },
+      ],
     };
 
     hAPI.setTaskComments(
