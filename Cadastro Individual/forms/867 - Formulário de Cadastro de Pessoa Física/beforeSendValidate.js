@@ -147,15 +147,15 @@ var beforeSendValidate = function (numState, nextState) {
   }
 };
 
+// Função que remove o campo de observação
+function removerAprovador() {
+  $(".painelAprovador").remove();
+}
+
 function setBordaVermelha(nomeCampo, iconeSpan, iconeDiv) {
   $("[name=" + nomeCampo + "]").attr("style", "border-color:red;");
   $("#" + iconeSpan).addClass(
     "fluigicon fluigicon-remove form-control-feedback"
   );
   $("#" + iconeDiv).addClass("form-group has-error has-feedback");
-}
-
-// Função que remove o campo de observação
-function removerAprovador() {
-  $(".painelAprovador").remove();
 }
