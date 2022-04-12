@@ -6,6 +6,10 @@ var beforeSendValidate = function (numState, nextState) {
   var msg = "";
   var vazio = " não pode ser vazio<br>";
 
+  if (PROXIMA_ATIVIDADE == 19) {
+    removerAprovador();
+  }
+
   if (ATIVIDADE_ATUAL == 12 || ATIVIDADE_ATUAL == 0 || ATIVIDADE_ATUAL == 9) {
     var validaCampo = $("[name=nomecompleto]").val();
     var nomeCampo = $("[name=nomecompleto]")[0].name;
@@ -149,4 +153,9 @@ function setBordaVermelha(nomeCampo, iconeSpan, iconeDiv) {
     "fluigicon fluigicon-remove form-control-feedback"
   );
   $("#" + iconeDiv).addClass("form-group has-error has-feedback");
+}
+
+// Função que remove o campo de observação
+function removerAprovador() {
+  $(".painelAprovador").remove();
 }
