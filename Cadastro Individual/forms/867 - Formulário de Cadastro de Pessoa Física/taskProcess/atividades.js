@@ -35,9 +35,9 @@ function atividades(ATIVIDADE_ATUAL) {
 function feedbackToClient() {
   regrasCampoNomeCompleto();
   regrasCampoCPF();
-  regrasCampoEmail();
-  regrasCampoTelefoneCelular();
-  regrasCampoTelefoneFixo();
+  // regrasCampoEmail();
+  // regrasCampoTelefoneCelular();
+  // regrasCampoTelefoneFixo();
   regrasCampoCEP();
   regrasCampoEstado();
   regrasCampoCidade();
@@ -78,32 +78,32 @@ function regrasCampoAbreviado() {
   });
 }
 
-function regrasCampoEmail() {
-  $("[name=email]").on("keyup", function () {
-    validarEmailInput();
-  });
-  $("[name=email]").on("blur", function () {
-    validarEmailInput();
-  });
-}
+// function regrasCampoEmail() {
+//   $("[name=email]").on("keyup", function () {
+//     validarEmailInput();
+//   });
+//   $("[name=email]").on("blur", function () {
+//     validarEmailInput();
+//   });
+// }
 
-function regrasCampoTelefoneCelular() {
-  $("[name=telefonecelular]").on("keyup", function () {
-    validarTelefoneCelInput();
-  });
-  $("[name=telefonecelular]").on("blur", function () {
-    validarTelefoneCelInput();
-  });
-}
+// function regrasCampoTelefoneCelular() {
+//   $("[name=telefonecelular]").on("keyup", function () {
+//     validarTelefoneCelInput();
+//   });
+//   $("[name=telefonecelular]").on("blur", function () {
+//     validarTelefoneCelInput();
+//   });
+// }
 
-function regrasCampoTelefoneFixo() {
-  $("[name=telefonefixo]").on("keyup", function () {
-    validarTelefoneFixoInput();
-  });
-  $("[name=telefonefixo]").on("blur", function () {
-    validarTelefoneFixoInput();
-  });
-}
+// function regrasCampoTelefoneFixo() {
+//   $("[name=telefonefixo]").on("keyup", function () {
+//     validarTelefoneFixoInput();
+//   });
+//   $("[name=telefonefixo]").on("blur", function () {
+//     validarTelefoneFixoInput();
+//   });
+// }
 
 function regrasCampoCEP() {
   $("[name=CEP]").on("keyup", function () {
@@ -197,7 +197,7 @@ function regrasCampoContaCorrente() {
 
 function sairCampo() {
   $(
-    "[name=CPF],[name=nomecompleto],[name=email],[name=telefonecelular],[name=telefonefixo],[name=CEP],[name=estado],[name=cidade],[name=bairro],[name=numero],[name=rua],[name=nomebanco],[name=codigobanco],[name=agencia],[name=contacorrente]"
+    "[name=CPF],[name=nomecompleto],[name=CEP],[name=estado],[name=cidade],[name=bairro],[name=numero],[name=rua],[name=nomebanco],[name=codigobanco],[name=agencia],[name=contacorrente]"
   ).on("blur", function (eval) {
     var nomeCampo = eval.currentTarget.name;
     setBordaCinza(nomeCampo);

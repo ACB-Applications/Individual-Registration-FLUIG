@@ -27,29 +27,29 @@ var beforeSendValidate = function (numState, nextState) {
       msg += "<b>CPF  </b> " + vazio;
     }
 
-    var validaCampo = $("[name=email]").val();
-    var nomeCampo = $("[name=email]")[0].name;
+    // var validaCampo = $("[name=email]").val();
+    // var nomeCampo = $("[name=email]")[0].name;
 
-    if (validaCampo == "") {
-      setBordaVermelha(nomeCampo, "icon-5", "div-email");
-      msg += "<b>E-mail  </b> " + vazio;
-    }
+    // if (validaCampo == "") {
+    //   setBordaVermelha(nomeCampo, "icon-5", "div-email");
+    //   msg += "<b>E-mail  </b> " + vazio;
+    // }
 
-    var validaCampo = $("[name=telefonecelular]").val();
-    var nomeCampo = $("[name=telefonecelular]")[0].name;
+    // var validaCampo = $("[name=telefonecelular]").val();
+    // var nomeCampo = $("[name=telefonecelular]")[0].name;
 
-    if (validaCampo == "") {
-      setBordaVermelha(nomeCampo, "icon-6", "div-telefone-celular");
-      msg += "<b>Telefone Celular  </b> " + vazio;
-    }
+    // if (validaCampo == "") {
+    //   setBordaVermelha(nomeCampo, "icon-6", "div-telefone-celular");
+    //   msg += "<b>Telefone Celular  </b> " + vazio;
+    // }
 
-    var validaCampo = $("[name=telefonefixo]").val();
-    var nomeCampo = $("[name=telefonefixo]")[0].name;
+    // var validaCampo = $("[name=telefonefixo]").val();
+    // var nomeCampo = $("[name=telefonefixo]")[0].name;
 
-    if (validaCampo == "") {
-      setBordaVermelha(nomeCampo, "icon-7", "div-telefone-fixo");
-      msg += "<b>Telefone Fixo  </b> " + vazio;
-    }
+    // if (validaCampo == "") {
+    //   setBordaVermelha(nomeCampo, "icon-7", "div-telefone-fixo");
+    //   msg += "<b>Telefone Fixo  </b> " + vazio;
+    // }
 
     var validaCampo = $("[name=CEP]").val();
     var nomeCampo = $("[name=CEP]")[0].name;
