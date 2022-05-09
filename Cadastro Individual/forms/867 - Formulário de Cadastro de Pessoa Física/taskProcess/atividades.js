@@ -22,7 +22,8 @@ function atividades(ATIVIDADE_ATUAL) {
     esconderinputAnexo();
     regrasCampoAbreviado();
     sairCampoNomeAbreviado();
-    esconderCardInstrucao();
+    esconderCardInstrucaoUsuario();
+    esconderCardInstrucaoAnexo();
   } else if (ATIVIDADE_ATUAL == 9) {
     sairCampo();
     feedbackToClient();
@@ -224,8 +225,12 @@ function esconderCampoNomeAbreviado() {
   $(".CampoNomeAbreviado").hide();
 }
 
-function esconderCardInstrucao() {
-  $(".card-personalizado").hide();
+function esconderCardInstrucaoUsuario() {
+  $("[id=card-instrucao-usuario]").hide();
+}
+
+function esconderCardInstrucaoAnexo() {
+  $("[id=card-instrucao-anexo]").hide();
 }
 
 function esconderAprovador() {
