@@ -42,7 +42,6 @@ function feedbackToClient() {
   regrasCampoEstado();
   regrasCampoCidade();
   regrasCampoBairro();
-  regrasCampoNumero();
   regrasCampoRua();
   regrasCampoNomeBanco();
   regrasCampoCodigoBanco();
@@ -141,15 +140,6 @@ function regrasCampoBairro() {
   });
 }
 
-function regrasCampoNumero() {
-  $("[name=numero]").on("keyup", function () {
-    validarNumeroInput();
-  });
-  $("[name=numero]").on("blur", function () {
-    validarNumeroInput();
-  });
-}
-
 function regrasCampoRua() {
   $("[name=rua]").on("keyup", function () {
     validarRuaInput();
@@ -197,7 +187,7 @@ function regrasCampoContaCorrente() {
 
 function sairCampo() {
   $(
-    "[name=CPF],[name=nomecompleto],[name=CEP],[name=estado],[name=cidade],[name=bairro],[name=numero],[name=rua],[name=nomebanco],[name=codigobanco],[name=agencia],[name=contacorrente]"
+    "[name=CPF],[name=nomecompleto],[name=CEP],[name=estado],[name=cidade],[name=bairro],[name=rua],[name=nomebanco],[name=codigobanco],[name=agencia],[name=contacorrente]"
   ).on("blur", function (eval) {
     var nomeCampo = eval.currentTarget.name;
     setBordaCinza(nomeCampo);
