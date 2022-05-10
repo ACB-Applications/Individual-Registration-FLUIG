@@ -83,14 +83,6 @@ var beforeSendValidate = function (numState, nextState) {
       msg += "<b>Bairro  </b> " + vazio;
     }
 
-    var validaCampo = $("[name=numero]").val();
-    var nomeCampo = $("[name=numero]")[0].name;
-
-    if (validaCampo == "") {
-      setBordaVermelha(nomeCampo, "icon-12", "div-numero");
-      msg += "<b>Número  </b> " + vazio;
-    }
-
     var validaCampo = $("[name=rua]").val();
     var nomeCampo = $("[name=rua]")[0].name;
 
