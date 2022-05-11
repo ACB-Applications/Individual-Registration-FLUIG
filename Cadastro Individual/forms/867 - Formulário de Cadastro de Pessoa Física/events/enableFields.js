@@ -22,6 +22,7 @@ function bloquearCampoInicial(form) {
   form.setEnabled("cidade", false);
   form.setEnabled("bairro", false);
   form.setEnabled("rua", false);
+  form.setEnabled("complemento", false);
   form.setEnabled("nomebanco", false);
   form.setEnabled("codigobanco", false);
   form.setEnabled("agencia", false);
