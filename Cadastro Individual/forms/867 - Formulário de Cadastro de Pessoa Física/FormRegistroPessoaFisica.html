@@ -15,24 +15,7 @@
 		<!-- Form -->
 		<form name="form" role="form">
 			<!-- Instruções para o usuário -->
-			<div id="card-instrucao-usuario" class="card" style="margin-bottom: 20px; color: black;">
-				<div class="card-body">
-					<h3 class="card-title">
-						<i class="fluigicon fluigicon-warning-sign icon-sm"></i>
-						Instruções para o usuário
-					</h3>
-					<p style="margin: 0px 0px 4px 0px;">
-						Siga abaixo as instruções e informações para não se perder na hora de preencher os campos do formulário:
-					</p>
-					<ol style="padding: 0px 16px 0px 16px;">
-						<li> Os campos do formulário só aceitam digitos com letra Maiúscula;</li>
-						<li>
-							Digite somente os números nos campos <strong>CPF, Telefone, CEP, Código, Agência, Conta
-								Corrente</strong> que o formulário completa com a formatação correta;
-						</li>
-					</ol>
-				</div>
-			</div>
+			<div id="card-instrucao-usuario" style="margin-bottom: 20px; color: black;"></div>
 			<!-- Panel Dados Pessoais -->
 			<div class="panel panel-default" style="color: black;">
 				<div class="panel-heading">
@@ -250,39 +233,7 @@
 				</div>
 			</div>
 			<!-- Instruções para o anexo -->
-			<div id="card-instrucao-anexo" class="card" style="margin-top: 20px; color: black;">
-				<div class="card-body">
-					<h3 class="card-title">
-						<i class="fluigicon fluigicon-warning-sign icon-sm"></i>
-						Instrução para o arquivo do anexo
-					</h3>
-					<p style="margin: 0px 0px 4px 0px;">Comprovante bancário válido. São os que contenham os dados de
-						<strong>AGÊNCIA, CONTA, BANCO,
-							TITULAR,</strong> sendo possível a perceber
-						o vínculo bancário, como por ex:
-					</p>
-					<ul style="list-style: none; padding: 0px 0px 0px 0px;">
-						<li>
-							- Folha de cheque;
-						</li>
-						<li>
-							- Foto do cartão do banco;
-						</li>
-						<li>
-							- Extrato de conta(ocultar dados financeiros);
-						</li>
-						<li>
-							- Print de tela do app do banco;
-						</li>
-						<li>
-							- Comprovante de transferência ou pix (ocultar dados financeiros);
-						</li>
-						<li>
-							- Formulário de abertura de conta;
-						</li>
-					</ul>
-				</div>
-			</div>
+			<div id="card-instrucao-anexo" style="margin-top: 20px; margin-bottom: 20px; color: black;"></div>
 			<!-- Panel Feedback do Avaliador -->
 			<div class="panel panel-default painelAprovador">
 				<div class="panel-heading">
@@ -293,27 +244,19 @@
 						placeholder="Escreva para o cliente qual informação está errada!"></textarea>
 				</div>
 			</div>
-			<!-- <div class="panel panel-default painelAprovador">
-				<div class="panel-heading">
-					<h3 class="panel-title">Integração Datasul</h3>
-				</div>
-				<div class="panel-body">
-					<textarea class="form-control" rows="3" name="retornoIntegracao" id="retornoIntegracao" readonly></textarea>
-				</div>
-			</div> -->
 		</form>
 	</div>
 </body>
 
-<!-- Upper Case -->
-<script type="text/javascript" src="case/UpperCase.js"></script>
+<!-- Handle -->
+<script type="text/javascript" src="input/handleInput.js"></script>
 
 <!-- Rules -->
 <script type="text/javascript" src="rules/lockout.js"></script>
 <script type="text/javascript" src="rules/maskInput.js"></script>
 
-<!-- TaskProcess -->
-<script type="text/javascript" src="taskProcess/atividades.js"></script>
+<!-- Tasks -->
+<script type="text/javascript" src="tasks/atividades.js"></script>
 
 <!-- Fluig Scope scripts -->
 <script type="text/javascript" src="beforeSendValidate.js"></script>
