@@ -141,7 +141,7 @@ var beforeSendValidate = function (numState, nextState) {
 
 // Função que remove o campo de observação
 function removerAprovador() {
-  $(".painelAprovador").remove();
+  $(".painelAprovador").hide();
 }
 
 function setBordaVermelha(nomeCampo, iconeSpan, iconeDiv) {
