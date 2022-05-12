@@ -1,3 +1,4 @@
+// Deixa as palavras no input maiúscula
 function handleInput(e) {
   var ss = e.target.selectionStart;
   var se = e.target.selectionEnd;
