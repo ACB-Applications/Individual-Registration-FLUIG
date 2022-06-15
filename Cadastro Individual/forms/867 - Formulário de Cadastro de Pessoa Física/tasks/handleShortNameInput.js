@@ -10,8 +10,8 @@ function handleShortNameInput() {
     esconderCampoNomeAbreviado();
   } else if (ATIVIDADE_ATUAL == 5) {
     aparecerCampoNomeAbreviado();
-    regrasCampoAbreviado();
     sairCampoNomeAbreviado();
+    regrasCampoAbreviado();
   } else if (ATIVIDADE_ATUAL == 9) {
     esconderCampoNomeAbreviado();
   }
