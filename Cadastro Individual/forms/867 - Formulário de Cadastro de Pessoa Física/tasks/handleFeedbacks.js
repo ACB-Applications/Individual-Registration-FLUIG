@@ -17,8 +17,9 @@ function handleFeedbacks() {
 
 // Agrupa as functions responsáveis por fazer o feedback visual do campo, para simplificar a chamada na condicional.
 function feedbackToClient() {
-  regrasCampoNomeCompleto();
   regrasCampoCPF();
+  regrasCampoNomeCompleto();
+  regrasCampoEmail();
   regrasCampoCEP();
   regrasCampoEstado();
   regrasCampoCidade();
@@ -46,6 +47,15 @@ function regrasCampoNomeCompleto() {
   });
   $("[name=nomecompleto]").on("blur", function () {
     validarNomeCompletoInput();
+  });
+}
+
+function regrasCampoEmail() {
+  $("[name=email]").on("keyup", function () {
+    validarEmailInput();
+  });
+  $("[name=email]").on("blur", function () {
+    validarEmailInput();
   });
 }
 
