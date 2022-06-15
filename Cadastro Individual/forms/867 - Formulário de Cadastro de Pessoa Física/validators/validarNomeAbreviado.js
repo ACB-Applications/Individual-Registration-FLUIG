@@ -14,9 +14,7 @@ function validarNomeAbreviado() {
         "fluigicon fluigicon-remove form-control-feedback"
       );
       $("[name=nomeabreviado]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-18]").text(
-        "É necessário que digite o nome abreviado utilizando 12 caracteres."
-      );
+      $("[id=help-18]").text("É necessário que digite o nome abreviado.");
     }
   } else {
     $("[name=nomeabreviado]").attr("style", "border-color:#1ab83f;");
