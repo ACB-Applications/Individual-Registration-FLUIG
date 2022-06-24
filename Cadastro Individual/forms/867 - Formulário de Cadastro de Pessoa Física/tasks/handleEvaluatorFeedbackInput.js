@@ -12,6 +12,10 @@ function handleEvaluatorFeedbackInput() {
     mostrarPainelFeedbackAprovador();
   } else if (ATIVIDADE_ATUAL == 9) {
     mostrarPainelFeedbackAprovador();
+  } else if (ATIVIDADE_ATUAL == 28) {
+    esconderPainelFeedbackAprovador();
+  } else if (VISIBILIDADE == "VIEW") {
+    esconderPainelFeedbackAprovador();
   }
 }
 
