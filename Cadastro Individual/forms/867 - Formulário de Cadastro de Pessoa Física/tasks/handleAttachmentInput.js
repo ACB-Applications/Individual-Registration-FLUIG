@@ -9,6 +9,13 @@ function handleAttachmentInput() {
   if (ATIVIDADE_ATUAL == 5) {
     esconderinputAnexo();
   }
+  if (ATIVIDADE_ATUAL == 9) {
+    mostrarinputAnexo();
+  }
+}
+
+function mostrarinputAnexo() {
+  $(".inputAnexo").show();
 }
 
 function esconderinputAnexo() {
