@@ -14,9 +14,9 @@
 	<div class="fluig-style-guide">
 		<!-- Form -->
 		<form name="form" role="form">
-			<!-- Instruções para o usuário -->
+			<!-- card de instruções para o usuário -->
 			<div id="card-instrucao-usuario" style="margin-bottom: 20px; color: black;"></div>
-			<!-- Panel Dados Pessoais -->
+			<!-- panel de dados Pessoais -->
 			<div class="panel panel-default" style="color: black;">
 				<div class="panel-heading">
 					<h3 class="panel-title">Dados Pessoais</h3>
@@ -24,7 +24,7 @@
 				<div class="panel-body">
 					<!-- row -->
 					<div class="row">
-						<!-- Input CPF -->
+						<!-- div do CPF -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-cpf">
 								<label class="control-label required" for="CPF">CPF</label>
@@ -33,12 +33,12 @@
 								<p id="help-2" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Input Nome Abreviado -->
+						<!-- div do nome abreviado -->
 						<div class="col-md-3 CampoNomeAbreviado">
 							<div class="form-group" id="div-nome-abreviado">
 								<label class="control-label required" for="nome-abreviado">Nome Abreviado</label>
 								<input type="text" maxlength="12" class="form-control" name="nomeabreviado" id="nome-abreviado"
-									oninput="handleInput(event)" placeholder="Ex.: Markoh Kravi">
+									oninput="UpperCaseInput(event)" placeholder="Ex.: Markoh Kravi">
 								<span id="icon-18" class=""></span>
 								<p id="help-18" class="help-block"></p>
 							</div>
@@ -46,12 +46,12 @@
 					</div>
 					<!-- row -->
 					<div class="row">
-						<!-- Input Nome Completo -->
+						<!-- div do nome completo -->
 						<div class="col-md-12">
 							<div class="form-group" id="div-nome-completo">
 								<label class="control-label required" for="nomecompleto">Nome Completo</label>
 								<input type="text" class="form-control" name="nomecompleto" id="nomecompleto"
-									oninput="handleInput(event)" placeholder="Ex.: MATHEUS HENDREAS SANTHIAGO ARANGUIZ">
+									oninput="UpperCaseInput(event)" placeholder="Ex.: MATHEUS HENDREAS SANTHIAGO ARANGUIZ">
 								<span id="icon-1" class=""></span>
 								<p id="help-1" class="help-block"></p>
 							</div>
@@ -59,17 +59,17 @@
 					</div>
 					<!-- row -->
 					<div class="row">
-						<!-- Input E-mail -->
+						<!-- div do e-mail -->
 						<div class="col-md-6">
 							<div class="form-group" id="div-email">
 								<label class="control-label" for="email">Email</label>
-								<input type="text" class="form-control" name="email" id="email" oninput="handleInput(event)"
+								<input type="text" class="form-control" name="email" id="email" oninput="UpperCaseInput(event)"
 									placeholder="Ex.: HENDREASANTIAGO@EMAIL.COM">
 								<span id="icon-5" class=""></span>
 								<p id="help-5" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Input Telefone Celular -->
+						<!-- div telefone-celular -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-telefone-celular">
 								<label class="control-label" for="telefone-celular">Telefone Celular</label>
@@ -79,7 +79,7 @@
 								<p id="help-6" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Input Telefone Fixo -->
+						<!-- div telefone-fixo -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-telefone-fixo">
 								<label class="control-label" for="telefone-fixo">Telefone Fixo</label>
@@ -92,7 +92,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Panel Endereço -->
+			<!-- panel de endereço -->
 			<div class="panel panel-default" style="color: black;">
 				<div class="panel-heading">
 					<h3 class="panel-title">Endereço</h3>
@@ -100,7 +100,7 @@
 				<div class="panel-body">
 					<!-- row -->
 					<div class="row">
-						<!-- Input CEP -->
+						<!-- div do CEP -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-cep">
 								<label class="control-label required" for="CEP">CEP</label>
@@ -109,21 +109,21 @@
 								<p id="help-8" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Input Nome do Estado -->
+						<!-- div do nome do estado -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-estado">
 								<label class="control-label required" for="estado">UF</label>
 								<input type="text" class="form-control" name="estado" id="estado" maxlength="2"
-									oninput="handleInput(event)" placeholder="Ex.: MG">
+									oninput="UpperCaseInput(event)" placeholder="Ex.: MG">
 								<span id="icon-9" class=""></span>
 								<p id="help-9" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Input Nome da Cidade -->
+						<!-- div do nome da cidade -->
 						<div class="col-md-6">
 							<div class="form-group" id="div-cidade">
 								<label class="control-label required" for="cidade">Cidade</label>
-								<input type="text" class="form-control" name="cidade" id="cidade" oninput="handleInput(event)"
+								<input type="text" class="form-control" name="cidade" id="cidade" oninput="UpperCaseInput(event)"
 									placeholder="Ex.: BELO HORIZONTE">
 								<span id="icon-10" class=""></span>
 								<p id="help-10" class="help-block"></p>
@@ -132,21 +132,21 @@
 					</div>
 					<!-- row -->
 					<div class="row">
-						<!-- Input Nome do Bairro -->
+						<!-- div do nome do bairro -->
 						<div class="col-md-3">
 							<div class="form-group" id="div-bairro">
 								<label class="control-label required" for="bairro">Bairro</label>
-								<input type="text" class="form-control" name="bairro" id="bairro" oninput="handleInput(event)"
+								<input type="text" class="form-control" name="bairro" id="bairro" oninput="UpperCaseInput(event)"
 									placeholder="Ex.: SAVASSI">
 								<span id="icon-11" class=""></span>
 								<p id="help-11" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Input Nome da Rua, N/SA -->
+						<!-- div do nome da rua, N/SA -->
 						<div class="col-md-9">
 							<div class="form-group" id="div-rua">
 								<label class="control-label required" for="rua">Rua, Número</label>
-								<input type="text" class="form-control" name="rua" id="rua" oninput="handleInput(event)"
+								<input type="text" class="form-control" name="rua" id="rua" oninput="UpperCaseInput(event)"
 									placeholder="Ex.: RUA ANTONIO DE ALBUQUERQUE, S/N">
 								<span id="icon-13" class=""></span>
 								<p id="help-13" class="help-block"></p>
@@ -154,12 +154,12 @@
 						</div>
 					</div>
 					<div class="row">
-						<!-- Input Complemento da Residência -->
+						<!-- div do complemento do endereço -->
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label" for="complemento">Complemento</label>
-								<input type="text" class="form-control" name="complemento" id="complemento" oninput="handleInput(event)"
-									placeholder="Ex.: AO LADO DO PREDIO">
+								<input type="text" class="form-control" name="complemento" id="complemento"
+									oninput="UpperCaseInput(event)" placeholder="Ex.: AO LADO DO PREDIO">
 								<span id="icon-12" class=""></span>
 								<p id="help-12" class="help-block"></p>
 							</div>
@@ -167,7 +167,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Panel Dados Bancários -->
+			<!-- panel dos dados bancários -->
 			<div class="panel panel-default" style="color: black;">
 				<div class="panel-heading">
 					<h3 class="panel-title">Dados Bancários</h3>
@@ -175,17 +175,17 @@
 				<div class="panel-body">
 					<!-- row -->
 					<div class="row">
-						<!-- Input Nome do Banco -->
+						<!-- div do nome do banco -->
 						<div class="col-md-4">
 							<div class="form-group" id="div-nome-banco">
 								<label class="control-label required" for="nomebanco">Nome do Banco</label>
-								<input type="text" class="form-control" name="nomebanco" id="nomebanco" oninput="handleInput(event)"
+								<input type="text" class="form-control" name="nomebanco" id="nomebanco" oninput="UpperCaseInput(event)"
 									placeholder="Ex.: NUBANK">
 								<span id="icon-14" class=""></span>
 								<p id="help-14" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Input Código do Banco -->
+						<!-- div código do banco -->
 						<div class="col-md-2">
 							<div class="form-group" id="div-codigo-banco">
 								<label class="control-label required" for="codigobanco">Código do Banco</label>
@@ -194,7 +194,7 @@
 								<p id="help-15" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Input Código da Agência -->
+						<!-- div código da agência -->
 						<div class="col-md-2">
 							<div class="form-group" id="div-agencia">
 								<label class="control-label required" for="agencia">Agência</label>
@@ -203,7 +203,7 @@
 								<p id="help-16" class="help-block"></p>
 							</div>
 						</div>
-						<!-- Input Conta Corrente -->
+						<!-- div da conta corrente -->
 						<div class="col-md-4">
 							<div class="form-group" id="div-conta-corrente">
 								<label class="control-label required" for="contacorrente">Conta Corrente</label>
@@ -214,8 +214,9 @@
 							</div>
 						</div>
 					</div>
-					<!-- Input Anexo de documento -->
+					<!-- row -->
 					<div class="row inputAnexo">
+						<!-- div do anexo de documento -->
 						<div class="col-md-8">
 							<div class="form-group">
 								<label class="control-label required" for="contacorrente">Comprovante da Conta Corrente</label>
@@ -232,39 +233,48 @@
 					</div>
 				</div>
 			</div>
-			<!-- Instruções para o anexo -->
+			<!-- div de instruções para o documento a ser anexado ao formulário -->
 			<div id="card-instrucao-anexo" style="margin-top: 20px; margin-bottom: 20px; color: black;"></div>
-			<!-- Panel Feedback do Avaliador -->
+			<!-- panel de feedback do avaliador -->
 			<div class="panel panel-default painelAprovador">
 				<div class="panel-heading">
 					<h3 class="panel-title">Pontos a serem revisados</h3>
 				</div>
 				<div class="panel-body">
-					<textarea class="form-control" rows="3" oninput="handleInput(event)" name="observadorAprovador"
-						id="observadorAprovador" placeholder="Escreva para o cliente qual informação está errada!"></textarea>
+					<textarea class="form-control" rows="3" oninput="UpperCaseInput(event)" name="observadorAprovador"
+						id="observadorAprovador" placeholder="Digite a orientação para o usuário"></textarea>
+				</div>
+			</div>
+			<!-- panel do response feedback -->
+			<div class="panel panel-default painelInfra">
+				<div class="panel-heading">
+					<h3 class="panel-title">Retorno de Integração com Datasul</h3>
+				</div>
+				<div class="panel-body">
+					<input type="hidden" id="statusIntegracao" name="statusIntegracao" value="" />
+					<input type="hidden" id="codFornecedorIntegracao" name="codFornecedorIntegracao" value="" />
+					<textarea class="form-control" rows="3" name="RespostaIntegracao" id="RespostaIntegracao" readonly></textarea>
 				</div>
 			</div>
 		</form>
 	</div>
 </body>
-
 <!-- Handle -->
-<script type="text/javascript" src="input/handleInput.js"></script>
-
+<script type="text/javascript" src="input/upperCaseInput.js"></script>
 <!-- Rules -->
 <script type="text/javascript" src="rules/lockout.js"></script>
 <script type="text/javascript" src="rules/maskInput.js"></script>
-
 <!-- Tasks -->
 <script type="text/javascript" src="tasks/handleAttachmentInput.js"></script>
 <script type="text/javascript" src="tasks/handleEvaluatorFeedbackInput.js"></script>
 <script type="text/javascript" src="tasks/handleFeedbacks.js"></script>
+<script type="text/javascript" src="tasks/handleInfraInput.js"></script>
 <script type="text/javascript" src="tasks/handleInstruction.js"></script>
 <script type="text/javascript" src="tasks/handleShortNameInput.js"></script>
-
+<!-- Service -->
+<script type="text/javascript" src="services/getCEP.js"></script>
 <!-- Fluig scripts -->
 <script type="text/javascript" src="beforeSendValidate.js"></script>
-
 <!-- Validators -->
 <script type="text/javascript" src="validators/validarCPF.js"></script>
 <script type="text/javascript" src="validators/validarNomeCompleto.js"></script>
@@ -281,8 +291,5 @@
 <script type="text/javascript" src="validators/validarCodigoBanco.js"></script>
 <script type="text/javascript" src="validators/validarAgencia.js"></script>
 <script type="text/javascript" src="validators/validarContaCorrente.js"></script>
-
-<!-- Service -->
-<script type="text/javascript" src="services/getCEP.js"></script>
 
 </html>
