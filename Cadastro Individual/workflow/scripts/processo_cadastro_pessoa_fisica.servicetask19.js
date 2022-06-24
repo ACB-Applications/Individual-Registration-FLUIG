@@ -8,13 +8,26 @@ function servicetask19() {
   var v_nomecompleto = hAPI.getCardValue("nomecompleto") + "";
   var v_nomeabreviado = hAPI.getCardValue("nomeabreviado") + "";
   var v_email = hAPI.getCardValue("email") + "";
+
   var v_telefonefixo = hAPI.getCardValue("telefonefixo") + "";
+
+  v_telefonefixo = v_telefonefixo.replace("(", "");
+  v_telefonefixo = v_telefonefixo.replace(")", "");
+  v_telefonefixo = v_telefonefixo.replace(" ", "");
+  v_telefonefixo = v_telefonefixo.replace("-", "");
+
   var v_telefonecelular = hAPI.getCardValue("telefonecelular") + "";
+
+  v_telefonecelular = v_telefonecelular.replace("(", "");
+  v_telefonecelular = v_telefonecelular.replace(")", "");
+  v_telefonecelular = v_telefonecelular.replace(" ", "");
+  v_telefonecelular = v_telefonecelular.replace(" ", "");
+  v_telefonecelular = v_telefonecelular.replace("-", "");
+
   var v_CEP = parseInt(hAPI.getCardValue("CEP") + "");
   var v_estado = hAPI.getCardValue("estado") + "";
   var v_cidade = hAPI.getCardValue("cidade") + "";
   var v_bairro = hAPI.getCardValue("bairro") + "";
-  var v_numero = parseInt(hAPI.getCardValue("numero") + "");
   var v_rua = hAPI.getCardValue("rua") + "";
 
   try {
@@ -33,24 +46,13 @@ function servicetask19() {
           cUF: v_estado,
           cCicade: v_cidade,
           cBairro: v_bairro,
-          iNum: v_numero,
           cRua: v_rua,
         },
       ],
     };
 
-    hAPI.setTaskComments(
-      getValue("WKUser"),
-      getValue("WKNumProces"),
-      0,
-      "teste"
-    );
-    hAPI.setTaskComments(
-      getValue("WKUser"),
-      getValue("WKNumProces"),
-      0,
-      JSON.stringify(dados)
-    );
+    //hAPI.setTaskComments(getValue("WKUser"), getValue("WKNumProces"),  0, "teste");
+    //hAPI.setTaskComments(getValue("WKUser"), getValue("WKNumProces"),  0, JSON.stringify(dados));
 
     var data = {
       companyId: getValue("WKCompany") + "",
@@ -62,9 +64,14 @@ function servicetask19() {
       options: {
         encoding: "UTF-8",
         mediaType: "application/json",
-        useSSL: true,
-        crossDomain: true,
+        //useSSL:true,
+        //crossDomain: true
       },
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+
       params: dados,
     };
 
@@ -79,14 +86,31 @@ function servicetask19() {
 
     var result = clientOauth.getResult();
 
-    if (result == null || result.isEmpty())
+    hAPI.setTaskComments(
+      getValue("WKUser"),
+      getValue("WKNumProces"),
+      0,
+      clientOauth.getHttpStatusResult()
+    );
+
+    hAPI.setCardValue("statusIntegracao", clientOauth.getHttpStatusResult());
+
+    if (result == null || result.isEmpty()) {
       hAPI.setTaskComments(
         getValue("WKUser"),
         getValue("WKNumProces"),
         0,
         "retorno vazio"
       );
-    else
+
+      hAPI.setCardValue("codFornecedorIntegracao", "");
+      hAPI.setCardValue(
+        "RespostaIntegracao",
+        clientOauth.getHttpStatusResult() + " - " + clientOauth.getDescription()
+      );
+    } else {
+      var result = JSON.parse(clientOauth.getResult());
+
       hAPI.setTaskComments(
         getValue("WKUser"),
         getValue("WKNumProces"),
@@ -94,22 +118,29 @@ function servicetask19() {
         result
       );
 
-    //hAPI.setCardValue("retornoIntegracao",result);
+      if (clientOauth.getHttpStatusResult() == 200) {
+        hAPI.setCardValue("RespostaIntegracao", result.tt - msg[0].descMsg);
 
-    //if(result== null || result.isEmpty())
+        if (result.tt - msg[0].codFornec == null)
+          hAPI.setCardValue("codFornecedorIntegracao", "");
+        else
+          hAPI.setCardValue("RespostaIntegracao", result.tt - msg[0].codFornec);
+      } else {
+        hAPI.setCardValue("codFornecedorIntegracao", "");
+        hAPI.setCardValue(
+          "RespostaIntegracao",
+          clientOauth.getHttpStatusResult() +
+            " - " +
+            clientOauth.getDescription()
+        );
+      }
+    }
 
     log.info("result: " + result);
-
-    var result = JSON.parse(clientOauth.getResult());
-
-    hAPI.setCardValue("retornoIntegracao", "Fim integracao");
-
-    return false; //provisorio
   } catch (e) {
     log.error("Ocorreu um erro incluir no Datasul: " + e);
 
-    hAPI.setCardValue("retornoIntegracao", e.message);
-
-    return false;
+    hAPI.setCardValue("statusIntegracao", "999");
+    hAPI.setCardValue("RespostaIntegracao", e.message);
   }
 }
