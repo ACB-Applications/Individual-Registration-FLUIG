@@ -76,7 +76,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>130</positionX>
-      <positionY>70</positionY>
+      <positionY>57</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -127,7 +127,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>310</positionX>
-      <positionY>196</positionY>
+      <positionY>167</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -179,7 +179,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>560</positionX>
-      <positionY>60</positionY>
+      <positionY>47</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -229,8 +229,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>560</positionX>
-      <positionY>340</positionY>
+      <positionX>530</positionX>
+      <positionY>294</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -249,29 +249,30 @@
       <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
       <destinationStates/>
       <digitalSignature>false</digitalSignature>
-      <executionType>1</executionType>
+      <executionType>2</executionType>
     </ProcessState>
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <version>1</version>
-        <sequence>23</sequence>
+        <sequence>28</sequence>
       </processStatePK>
-      <stateName>Intermediário</stateName>
-      <stateDescription>Intermediário</stateDescription>
-      <instruction>Evento intermediário do processo</instruction>
+      <stateName>Suporte Infra</stateName>
+      <stateDescription>Suporte Infra</stateDescription>
+      <instruction></instruction>
       <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId></engineAllocationId>
-      <engineAllocationConfiguration></engineAllocationConfiguration>
-      <selectColleague>0</selectColleague>
+      <engineAllocationId>Papel</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Role&gt;admin&lt;/Role&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
       <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
-      <allowanceAuthorityTime>1</allowanceAuthorityTime>
-      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
       <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
       <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
       <transferAttachments>false</transferAttachments>
@@ -280,23 +281,52 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>560</positionX>
-      <positionY>334</positionY>
+      <positionX>530</positionX>
+      <positionY>430</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
       <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
       <frequenceManagerTime>0</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
-      <periodId></periodId>
+      <periodId>Default</periodId>
       <stateType>0</stateType>
-      <bpmnType>43</bpmnType>
+      <bpmnType>80</bpmnType>
       <signalId>0</signalId>
       <counterSign>false</counterSign>
       <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
       <destinationStates/>
       <digitalSignature>false</digitalSignature>
-      <parentSequence>19</parentSequence>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <version>1</version>
+        <sequence>25</sequence>
+      </processStatePK>
+      <stateName>Retorno</stateName>
+      <stateDescription>Retorno</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>800</positionX>
+      <positionY>285</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
     </ProcessState>
     <ProcessState>
       <processStatePK>
@@ -327,8 +357,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>740</positionX>
-      <positionY>372</positionY>
+      <positionX>950</positionX>
+      <positionY>311</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -346,7 +376,44 @@
       <digitalSignature>false</digitalSignature>
     </ProcessState>
   </list>
-  <list/>
+  <list>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>24</version>
+        <sequence>25</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&quot;statusIntegracao&quot;) == &quot;999&quot;</condition>
+      <destinationSequenceId>28</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>24</version>
+        <sequence>25</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&quot;codFornecedorIntegracao&quot;) == &quot;&quot;</condition>
+      <destinationSequenceId>28</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <expressionOrder>3</expressionOrder>
+        <version>24</version>
+        <sequence>25</sequence>
+      </conditionProcessStatePK>
+      <condition>true</condition>
+      <destinationSequenceId>17</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+  </list>
   <list>
     <ProcessLink>
       <processLinkPK>
@@ -359,23 +426,6 @@
       <returnPermited>false</returnPermited>
       <initialStateSequence>9</initialStateSequence>
       <finalStateSequence>5</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>1</version>
-        <linkSequence>18</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>19</initialStateSequence>
-      <finalStateSequence>17</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>false</automaticLink>
@@ -438,11 +488,79 @@
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <version>1</version>
-        <linkSequence>24</linkSequence>
+        <linkSequence>26</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>23</initialStateSequence>
+      <initialStateSequence>19</initialStateSequence>
+      <finalStateSequence>25</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <version>1</version>
+        <linkSequence>27</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>25</initialStateSequence>
+      <finalStateSequence>17</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <version>1</version>
+        <linkSequence>29</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>25</initialStateSequence>
+      <finalStateSequence>28</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <version>1</version>
+        <linkSequence>30</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>28</initialStateSequence>
+      <finalStateSequence>19</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <version>1</version>
+        <linkSequence>31</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>28</initialStateSequence>
       <finalStateSequence>5</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
@@ -501,45 +619,52 @@
   var v_nomecompleto = hAPI.getCardValue(&quot;nomecompleto&quot;) + &quot;&quot;;&#xd;
   var v_nomeabreviado = hAPI.getCardValue(&quot;nomeabreviado&quot;) + &quot;&quot;;&#xd;
   var v_email = hAPI.getCardValue(&quot;email&quot;) + &quot;&quot;;&#xd;
+&#xd;
   var v_telefonefixo = hAPI.getCardValue(&quot;telefonefixo&quot;) + &quot;&quot;;&#xd;
+&#xd;
+  v_telefonefixo = v_telefonefixo.replace(&quot;(&quot;, &quot;&quot;);&#xd;
+  v_telefonefixo = v_telefonefixo.replace(&quot;)&quot;, &quot;&quot;);&#xd;
+  v_telefonefixo = v_telefonefixo.replace(&quot; &quot;, &quot;&quot;);&#xd;
+  v_telefonefixo = v_telefonefixo.replace(&quot;-&quot;, &quot;&quot;);&#xd;
+&#xd;
   var v_telefonecelular = hAPI.getCardValue(&quot;telefonecelular&quot;) + &quot;&quot;;&#xd;
+&#xd;
+  v_telefonecelular = v_telefonecelular.replace(&quot;(&quot;, &quot;&quot;);&#xd;
+  v_telefonecelular = v_telefonecelular.replace(&quot;)&quot;, &quot;&quot;);&#xd;
+  v_telefonecelular = v_telefonecelular.replace(&quot; &quot;, &quot;&quot;);&#xd;
+  v_telefonecelular = v_telefonecelular.replace(&quot; &quot;, &quot;&quot;);&#xd;
+  v_telefonecelular = v_telefonecelular.replace(&quot;-&quot;, &quot;&quot;);&#xd;
+&#xd;
   var v_CEP = parseInt(hAPI.getCardValue(&quot;CEP&quot;) + &quot;&quot;);&#xd;
   var v_estado = hAPI.getCardValue(&quot;estado&quot;) + &quot;&quot;;&#xd;
   var v_cidade = hAPI.getCardValue(&quot;cidade&quot;) + &quot;&quot;;&#xd;
   var v_bairro = hAPI.getCardValue(&quot;bairro&quot;) + &quot;&quot;;&#xd;
-  var v_numero = parseInt(hAPI.getCardValue(&quot;numero&quot;) + &quot;&quot;);&#xd;
+  var v_numero = 999; //provisorio no novo build da api datasul não vai ter este campo&#xd;
   var v_rua = hAPI.getCardValue(&quot;rua&quot;) + &quot;&quot;;&#xd;
 &#xd;
   try {&#xd;
     var clientService = fluigAPI.getAuthorizeClientService();&#xd;
 &#xd;
     var dados = {&#xd;
-      cCgc: v_CPF,&#xd;
-      cNome: v_nomecompleto,&#xd;
-      nomeAbrev: v_nomeabreviado,&#xd;
-      cEmail: v_email,&#xd;
-      cFoneCel: v_telefonecelular,&#xd;
-      cFoneFixo: v_telefonefixo,&#xd;
-      iCep: v_CEP,&#xd;
-      cUF: v_estado,&#xd;
-      cCicade: v_cidade,&#xd;
-      cBairro: v_bairro,&#xd;
-      iNum: v_numero,&#xd;
-      cRua: v_rua,&#xd;
+      &quot;tt-fornecedor&quot;: [&#xd;
+        {&#xd;
+          cCgc: v_CPF,&#xd;
+          cNome: v_nomecompleto,&#xd;
+          nomeAbrev: v_nomeabreviado,&#xd;
+          cEmail: v_email,&#xd;
+          cFoneCel: v_telefonecelular,&#xd;
+          cFoneFixo: v_telefonefixo,&#xd;
+          iCep: v_CEP,&#xd;
+          cUF: v_estado,&#xd;
+          cCicade: v_cidade,&#xd;
+          cBairro: v_bairro,&#xd;
+          cRua: v_rua,&#xd;
+        },&#xd;
+      ],&#xd;
     };&#xd;
 &#xd;
-    hAPI.setTaskComments(&#xd;
-      getValue(&quot;WKUser&quot;),&#xd;
-      getValue(&quot;WKNumProces&quot;),&#xd;
-      0,&#xd;
-      &quot;teste&quot;&#xd;
-    );&#xd;
-    hAPI.setTaskComments(&#xd;
-      getValue(&quot;WKUser&quot;),&#xd;
-      getValue(&quot;WKNumProces&quot;),&#xd;
-      0,&#xd;
-      JSON.stringify(dados)&#xd;
-    );&#xd;
+    //hAPI.setTaskComments(getValue(&quot;WKUser&quot;), getValue(&quot;WKNumProces&quot;),  0, &quot;teste&quot;);&#xd;
+    //hAPI.setTaskComments(getValue(&quot;WKUser&quot;), getValue(&quot;WKNumProces&quot;),  0, JSON.stringify(dados));&#xd;
 &#xd;
     var data = {&#xd;
       companyId: getValue(&quot;WKCompany&quot;) + &quot;&quot;,&#xd;
@@ -551,9 +676,14 @@
       options: {&#xd;
         encoding: &quot;UTF-8&quot;,&#xd;
         mediaType: &quot;application/json&quot;,&#xd;
-        useSSL: true,&#xd;
-        crossDomain: true,&#xd;
+        //useSSL:true,&#xd;
+        //crossDomain: true&#xd;
       },&#xd;
+&#xd;
+      headers: {&#xd;
+        &quot;Content-Type&quot;: &quot;application/json&quot;,&#xd;
+      },&#xd;
+&#xd;
       params: dados,&#xd;
     };&#xd;
 &#xd;
@@ -568,14 +698,31 @@
 &#xd;
     var result = clientOauth.getResult();&#xd;
 &#xd;
-    if (result == null || result.isEmpty())&#xd;
+    hAPI.setTaskComments(&#xd;
+      getValue(&quot;WKUser&quot;),&#xd;
+      getValue(&quot;WKNumProces&quot;),&#xd;
+      0,&#xd;
+      clientOauth.getHttpStatusResult()&#xd;
+    );&#xd;
+&#xd;
+    hAPI.setCardValue(&quot;statusIntegracao&quot;, clientOauth.getHttpStatusResult());&#xd;
+&#xd;
+    if (result == null || result.isEmpty()) {&#xd;
       hAPI.setTaskComments(&#xd;
         getValue(&quot;WKUser&quot;),&#xd;
         getValue(&quot;WKNumProces&quot;),&#xd;
         0,&#xd;
         &quot;retorno vazio&quot;&#xd;
       );&#xd;
-    else&#xd;
+&#xd;
+      hAPI.setCardValue(&quot;codFornecedorIntegracao&quot;, &quot;&quot;);&#xd;
+      hAPI.setCardValue(&#xd;
+        &quot;RespostaIntegracao&quot;,&#xd;
+        clientOauth.getHttpStatusResult() + &quot; - &quot; + clientOauth.getDescription()&#xd;
+      );&#xd;
+    } else {&#xd;
+      var result = JSON.parse(clientOauth.getResult());&#xd;
+&#xd;
       hAPI.setTaskComments(&#xd;
         getValue(&quot;WKUser&quot;),&#xd;
         getValue(&quot;WKNumProces&quot;),&#xd;
@@ -583,23 +730,30 @@
         result&#xd;
       );&#xd;
 &#xd;
-    //hAPI.setCardValue(&quot;retornoIntegracao&quot;,result);&#xd;
+      if (clientOauth.getHttpStatusResult() == 200) {&#xd;
+        hAPI.setCardValue(&quot;RespostaIntegracao&quot;, result.tt - msg[0].descMsg);&#xd;
 &#xd;
-    //if(result== null || result.isEmpty())&#xd;
+        if (result.tt - msg[0].codFornec == null)&#xd;
+          hAPI.setCardValue(&quot;codFornecedorIntegracao&quot;, &quot;&quot;);&#xd;
+        else&#xd;
+          hAPI.setCardValue(&quot;RespostaIntegracao&quot;, result.tt - msg[0].codFornec);&#xd;
+      } else {&#xd;
+        hAPI.setCardValue(&quot;codFornecedorIntegracao&quot;, &quot;&quot;);&#xd;
+        hAPI.setCardValue(&#xd;
+          &quot;RespostaIntegracao&quot;,&#xd;
+          clientOauth.getHttpStatusResult() +&#xd;
+            &quot; - &quot; +&#xd;
+            clientOauth.getDescription()&#xd;
+        );&#xd;
+      }&#xd;
+    }&#xd;
 &#xd;
     log.info(&quot;result: &quot; + result);&#xd;
-&#xd;
-    var result = JSON.parse(clientOauth.getResult());&#xd;
-&#xd;
-    hAPI.setCardValue(&quot;retornoIntegracao&quot;, &quot;Fim integracao&quot;);&#xd;
-&#xd;
-    return false; //provisorio&#xd;
   } catch (e) {&#xd;
     log.error(&quot;Ocorreu um erro incluir no Datasul: &quot; + e);&#xd;
 &#xd;
-    hAPI.setCardValue(&quot;retornoIntegracao&quot;, e.message);&#xd;
-&#xd;
-    return false;&#xd;
+    hAPI.setCardValue(&quot;statusIntegracao&quot;, &quot;999&quot;);&#xd;
+    hAPI.setCardValue(&quot;RespostaIntegracao&quot;, e.message);&#xd;
   }&#xd;
 }&#xd;
 </eventDescription>
@@ -608,9 +762,9 @@
   <list/>
   <list>
     <SwimLane>
-      <color>FFFFFF</color>
-      <height>453</height>
-      <width>781</width>
+      <color>F6C6EA</color>
+      <height>511</height>
+      <width>1041</width>
       <positionX>20</positionX>
       <positionY>10</positionY>
       <stateName>WorkFlow Processo de Cadastro - Pessoa Física</stateName>
@@ -624,9 +778,9 @@
       </swimLanePK>
     </SwimLane>
     <SwimLane>
-      <color>82b0b7</color>
-      <height>151</height>
-      <width>751</width>
+      <color>BDE6F1</color>
+      <height>127</height>
+      <width>1011</width>
       <positionX>50</positionX>
       <positionY>10</positionY>
       <stateName>Usuário</stateName>
@@ -640,11 +794,11 @@
       </swimLanePK>
     </SwimLane>
     <SwimLane>
-      <color>adc9ac</color>
-      <height>151</height>
-      <width>751</width>
+      <color>DBDFFD</color>
+      <height>127</height>
+      <width>1011</width>
       <positionX>50</positionX>
-      <positionY>161</positionY>
+      <positionY>137</positionY>
       <stateName>Aprovador</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
@@ -656,11 +810,11 @@
       </swimLanePK>
     </SwimLane>
     <SwimLane>
-      <color>d0daae</color>
-      <height>151</height>
-      <width>751</width>
+      <color>9A86A4</color>
+      <height>127</height>
+      <width>1011</width>
       <positionX>50</positionX>
-      <positionY>312</positionY>
+      <positionY>264</positionY>
       <stateName>API Rest DataSul</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
@@ -669,6 +823,22 @@
         <processId>processo_cadastro_pessoa_fisica</processId>
         <version>1</version>
         <sequence>4</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>7FB5FF</color>
+      <height>130</height>
+      <width>1011</width>
+      <positionX>50</positionX>
+      <positionY>391</positionY>
+      <stateName>Suporte TI</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <version>1</version>
+        <sequence>5</sequence>
       </swimLanePK>
     </SwimLane>
   </list>
@@ -684,7 +854,7 @@
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>362</positionX>
-      <positionY>93</positionY>
+      <positionY>75</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -695,7 +865,7 @@
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>147</positionX>
-      <positionY>233</positionY>
+      <positionY>202</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -705,41 +875,52 @@
         <linkSequence>20</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
-      <positionX>248</positionX>
-      <positionY>233</positionY>
+      <positionX>265</positionX>
+      <positionY>202</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <version>24</version>
-        <linkSequence>20</linkSequence>
-        <bendSequence>3</bendSequence>
-      </processLinkBendPK>
-      <positionX>308</positionX>
-      <positionY>235</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>24</version>
-        <linkSequence>24</linkSequence>
+        <linkSequence>22</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>520</positionX>
-      <positionY>415</positionY>
+      <positionX>583</positionX>
+      <positionY>202</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <version>24</version>
-        <linkSequence>24</linkSequence>
+        <linkSequence>29</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>829</positionX>
+      <positionY>458</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <version>24</version>
+        <linkSequence>29</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
+      <positionX>695</positionX>
+      <positionY>458</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>processo_cadastro_pessoa_fisica</processId>
+        <version>24</version>
+        <linkSequence>31</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
       <positionX>363</positionX>
-      <positionY>415</positionY>
+      <positionY>457</positionY>
     </ProcessLinkBend>
   </list>
   <list/>
@@ -759,7 +940,58 @@
     </ProcessStateService>
   </list>
   <list/>
-  <list/>
+  <list>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>processo_cadastro_pessoa_fisica</processId>
+      <processVersion>24</processVersion>
+      <stateSequence>9</stateSequence>
+      <appKey>approval</appKey>
+      <appField>title</appField>
+      <description></description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>processo_cadastro_pessoa_fisica</processId>
+      <processVersion>24</processVersion>
+      <stateSequence>9</stateSequence>
+      <appKey>approval</appKey>
+      <appField>description</appField>
+      <description></description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>processo_cadastro_pessoa_fisica</processId>
+      <processVersion>24</processVersion>
+      <stateSequence>9</stateSequence>
+      <appKey>approval</appKey>
+      <appField>highlight</appField>
+      <description></description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>processo_cadastro_pessoa_fisica</processId>
+      <processVersion>24</processVersion>
+      <stateSequence>9</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description></description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>processo_cadastro_pessoa_fisica</processId>
+      <processVersion>24</processVersion>
+      <stateSequence>9</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description></description>
+    </ProcessAppConfiguration>
+  </list>
   <list/>
   <list/>
 </list>
