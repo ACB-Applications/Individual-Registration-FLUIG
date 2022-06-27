@@ -639,7 +639,6 @@
   var v_estado = hAPI.getCardValue(&quot;estado&quot;) + &quot;&quot;;&#xd;
   var v_cidade = hAPI.getCardValue(&quot;cidade&quot;) + &quot;&quot;;&#xd;
   var v_bairro = hAPI.getCardValue(&quot;bairro&quot;) + &quot;&quot;;&#xd;
-  var v_numero = 999; //provisorio no novo build da api datasul não vai ter este campo&#xd;
   var v_rua = hAPI.getCardValue(&quot;rua&quot;) + &quot;&quot;;&#xd;
 &#xd;
   try {&#xd;
