@@ -6,12 +6,12 @@ function validarCodigoBancoInput() {
     if ($("[id=codigo-banco]").hasClass("has-error") == false) {
       if ($("[id=div-codigo-banco]").hasClass("has-success") == true) {
         $("[id=div-codigo-banco],[id=icon-15]").removeClass(
-          "has-success has-feedback fluigicon fluigicon-verified form-control-feedback"
+          "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
       $("[id=div-codigo-banco]").addClass("has-error has-feedback");
       $("[id=icon-15]").addClass(
-        "fluigicon fluigicon-remove form-control-feedback"
+        "flaticon flaticon-info icon-sm form-control-feedback"
       );
       $("[name=codigobanco]").attr("style", "border-color:#cc3d3d;");
       $("[id=help-15]").text("Digite o código do banco.");
@@ -21,12 +21,12 @@ function validarCodigoBancoInput() {
     if ($("[id=div-codigo-banco]").hasClass("has-success") == false) {
       if ($("[id=div-codigo-banco]").hasClass("has-error") == true) {
         $("[id=div-codigo-banco],[id=icon-15]").removeClass(
-          "has-error has-feedback fluigicon fluigicon-remove form-control-feedback"
+          "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
       $("[id=div-codigo-banco]").addClass("has-success has-feedback");
       $("[id=icon-15]").addClass(
-        "fluigicon fluigicon-verified form-control-feedback"
+        "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
       $("[id=help-15]").text("");
     }

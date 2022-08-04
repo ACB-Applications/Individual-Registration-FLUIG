@@ -9,7 +9,8 @@ function beforeStateEntry(sequenceId) {
       if (
         attachment.getDocumentDescription().indexOf(".pdf") > -1 ||
         attachment.getDocumentDescription().indexOf(".png") > -1 ||
-        attachment.getDocumentDescription().indexOf(".jpeg") > -1
+        attachment.getDocumentDescription().indexOf(".jpeg") > -1 ||
+        attachment.getDocumentDescription().indexOf(".jpg") > -1
       ) {
         hasAttachment = true;
       }

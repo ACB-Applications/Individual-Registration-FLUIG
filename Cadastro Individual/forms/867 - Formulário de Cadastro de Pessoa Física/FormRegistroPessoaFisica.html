@@ -7,7 +7,13 @@
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
-	<link type="text/css" rel="stylesheet" href="css/redPoint.css" />
+	<style>
+		.required:after {
+			color: red;
+			font-weight: bold;
+			content: " *";
+		}
+	</style>
 </head>
 
 <body>
@@ -74,7 +80,7 @@
 							<div class="form-group" id="div-telefone-celular">
 								<label class="control-label" for="telefone-celular">Telefone Celular</label>
 								<input type="text" class="form-control" name="telefonecelular" id="telefone-celular"
-									placeholder="Ex.: (31) 9 8349-3176">
+									placeholder="Ex.: (31)98349-3176">
 								<span id="icon-6" class=""></span>
 								<p id="help-6" class="help-block"></p>
 							</div>
@@ -84,7 +90,7 @@
 							<div class="form-group" id="div-telefone-fixo">
 								<label class="control-label" for="telefone-fixo">Telefone Fixo</label>
 								<input type="text" class="form-control" name="telefonefixo" id="telefone-fixo"
-									placeholder="Ex.: (31) 3467-8965">
+									placeholder="Ex.: (31)3467-8965">
 								<span id="icon-7" class=""></span>
 								<p id="help-7" class="help-block"></p>
 							</div>
@@ -259,37 +265,38 @@
 		</form>
 	</div>
 </body>
-<!-- Handle -->
-<script type="text/javascript" src="input/upperCaseInput.js"></script>
-<!-- Rules -->
-<script type="text/javascript" src="rules/lockout.js"></script>
-<script type="text/javascript" src="rules/maskInput.js"></script>
-<!-- Tasks -->
-<script type="text/javascript" src="tasks/handleAttachmentInput.js"></script>
-<script type="text/javascript" src="tasks/handleEvaluatorFeedbackInput.js"></script>
-<script type="text/javascript" src="tasks/handleFeedbacks.js"></script>
-<script type="text/javascript" src="tasks/handleInfraInput.js"></script>
-<script type="text/javascript" src="tasks/handleInstruction.js"></script>
-<script type="text/javascript" src="tasks/handleShortNameInput.js"></script>
-<!-- Service -->
-<script type="text/javascript" src="services/getCEP.js"></script>
+<!-- UpperCaseInput -->
+<script type="text/javascript" src="upperCaseInput.js"></script>
+<!-- Mask Input -->
+<script type="text/javascript" src="maskInput.js"></script>
+<!-- Lockout -->
+<script type="text/javascript" src="lockout.js"></script>
+<!-- Handles -->
+<script type="text/javascript" src="handleAttachmentInput.js"></script>
+<script type="text/javascript" src="handleEvaluatorFeedbackInput.js"></script>
+<script type="text/javascript" src="handleFeedbacks.js"></script>
+<script type="text/javascript" src="handleInfraInput.js"></script>
+<script type="text/javascript" src="handleInstruction.js"></script>
+<script type="text/javascript" src="handleShortNameInput.js"></script>
+<!-- Get CEP -->
+<script type="text/javascript" src="getCEP.js"></script>
 <!-- Fluig scripts -->
 <script type="text/javascript" src="beforeSendValidate.js"></script>
 <!-- Validators -->
-<script type="text/javascript" src="validators/validarCPF.js"></script>
-<script type="text/javascript" src="validators/validarNomeCompleto.js"></script>
-<script type="text/javascript" src="validators/validarNomeAbreviado.js"></script>
-<script type="text/javascript" src="validators/validarEmail.js"></script>
-<script type="text/javascript" src="validators/validarTelefoneCel.js"></script>
-<script type="text/javascript" src="validators/validarTelefoneFixo.js"></script>
-<script type="text/javascript" src="validators/validarCEP.js"></script>
-<script type="text/javascript" src="validators/validarEstado.js"></script>
-<script type="text/javascript" src="validators/validarCidade.js"></script>
-<script type="text/javascript" src="validators/validarBairro.js"></script>
-<script type="text/javascript" src="validators/validarRua.js"></script>
-<script type="text/javascript" src="validators/validarNomeBanco.js"></script>
-<script type="text/javascript" src="validators/validarCodigoBanco.js"></script>
-<script type="text/javascript" src="validators/validarAgencia.js"></script>
-<script type="text/javascript" src="validators/validarContaCorrente.js"></script>
+<script type="text/javascript" src="validarCPF.js"></script>
+<script type="text/javascript" src="validarNomeCompleto.js"></script>
+<script type="text/javascript" src="validarNomeAbreviado.js"></script>
+<script type="text/javascript" src="validarEmail.js"></script>
+<script type="text/javascript" src="validarTelefoneCel.js"></script>
+<script type="text/javascript" src="validarTelefoneFixo.js"></script>
+<script type="text/javascript" src="validarCEP.js"></script>
+<script type="text/javascript" src="validarEstado.js"></script>
+<script type="text/javascript" src="validarCidade.js"></script>
+<script type="text/javascript" src="validarBairro.js"></script>
+<script type="text/javascript" src="validarRua.js"></script>
+<script type="text/javascript" src="validarNomeBanco.js"></script>
+<script type="text/javascript" src="validarCodigoBanco.js"></script>
+<script type="text/javascript" src="validarAgencia.js"></script>
+<script type="text/javascript" src="validarContaCorrente.js"></script>
 
 </html>

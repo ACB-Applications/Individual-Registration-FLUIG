@@ -1,34 +1,31 @@
-function validarNomeCompletoInput() {
-  if (
-    $("[id=nomecompleto]").val() == false ||
-    $("[id=nomecompleto]").val().length <= 3
-  ) {
-    if ($("[id=div-nome-completo]").hasClass("has-error") == false) {
-      if ($("[id=div-nome-completo]").hasClass("has-success") == true) {
-        $("[id=div-nome-completo],[id=icon-1]").removeClass(
-          "has-success has-feedback fluigicon fluigicon-verified form-control-feedback"
+function validarCPFInput() {
+  if ($("[id=CPF]").val() == false || $("[id=CPF]").val().length <= 13) {
+    if ($("[id=div-cpf]").hasClass("has-error") == false) {
+      if ($("[id=div-cpf]").hasClass("has-success") == true) {
+        $("[id=div-cpf],[id=icon-2]").removeClass(
+          "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
-      $("[id=div-nome-completo]").addClass("has-error has-feedback");
-      $("[id=icon-1]").addClass(
-        "fluigicon fluigicon-remove form-control-feedback"
+      $("[id=div-cpf]").addClass("has-error has-feedback");
+      $("[id=icon-2]").addClass(
+        "flaticon flaticon-info icon-sm form-control-feedback"
       );
-      $("[name=nomecompleto]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-1]").text("Digite o nome completo.");
+      $("[name=CPF]").attr("style", "border-color:#cc3d3d;");
+      $("[id=help-2]").text("Digite o CPF.");
     }
   } else {
-    $("[name=nomecompleto]").attr("style", "border-color:#1ab83f;");
-    if ($("[id=div-nome-completo]").hasClass("has-success") == false) {
-      if ($("[id=div-nome-completo]").hasClass("has-error") == true) {
-        $("[id=div-nome-completo],[id=icon-1]").removeClass(
-          "has-error has-feedback fluigicon fluigicon-remove form-control-feedback"
+    $("[name=CPF]").attr("style", "border-color:#1ab83f;");
+    if ($("[id=div-cpf]").hasClass("has-success") == false) {
+      if ($("[id=div-cpf]").hasClass("has-error") == true) {
+        $("[id=div-cpf],[id=icon-2]").removeClass(
+          "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
-      $("[id=div-nome-completo]").addClass("has-success has-feedback");
-      $("[id=icon-1]").addClass(
-        "fluigicon fluigicon-verified form-control-feedback"
+      $("[id=div-cpf]").addClass("has-success has-feedback");
+      $("[id=icon-2]").addClass(
+        "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
-      $("[id=help-1]").text("");
+      $("[id=help-2]").text("");
     }
   }
 }
@@ -36,11 +33,11 @@ function validarNomeCompletoInput() {
 // Versão antiga do código
 // Obs.: Código sem jQuery
 
-// function validarNomeCompletoInput() {
-//   const valorInput = document.getElementById("nomecompleto").value;
-//   const div = document.querySelector("#div-nome-completo");
-//   const span = document.querySelector("#icon-1");
-//   const p = document.querySelector("#help-1");
+// function validarCPFInput() {
+//   const valorInput = document.getElementById("CPF").value;
+//   const div = document.querySelector("#div-cpf");
+//   const span = document.querySelector("#icon-2");
+//   const p = document.querySelector("#help-2");
 
 //   if (valorInput == false || valorInput.length <= 13) {
 //     if (div.classList.contains("has-error") == false) {
@@ -60,7 +57,7 @@ function validarNomeCompletoInput() {
 //       span.classList.add("fluigicon-remove");
 //       span.classList.add("form-control-feedback");
 //       $("[name=CPF]").attr("style", "border-color:#cc3d3d;");
-//       p.innerText = "É necessário que digite o nome completo.";
+//       p.innerText = "É necessário que digite o CPF.";
 //     }
 //   } else {
 //     $("[name=CPF]").attr("style", "border-color:#1ab83f;");

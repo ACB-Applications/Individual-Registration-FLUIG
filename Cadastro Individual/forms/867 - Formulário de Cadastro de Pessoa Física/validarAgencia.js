@@ -3,12 +3,12 @@ function validarAgenciaInput() {
     if ($("[id=div-agencia]").hasClass("has-error") == false) {
       if ($("[id=div-agencia]").hasClass("has-success") == true) {
         $("[id=div-agencia],[id=icon-16]").removeClass(
-          "has-success has-feedback fluigicon fluigicon-verified form-control-feedback"
+          "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
       $("[id=div-agencia]").addClass("has-error has-feedback");
       $("[id=icon-16]").addClass(
-        "fluigicon fluigicon-remove form-control-feedback"
+        "flaticon flaticon-info icon-sm form-control-feedback"
       );
       $("[name=agencia]").attr("style", "border-color:#cc3d3d;");
       $("[id=help-16]").text("Digite o código da agência.");
@@ -18,12 +18,12 @@ function validarAgenciaInput() {
     if ($("[id=div-agencia]").hasClass("has-success") == false) {
       if ($("[id=div-agencia]").hasClass("has-error") == true) {
         $("[id=div-agencia],[id=icon-16]").removeClass(
-          "has-error has-feedback fluigicon fluigicon-remove form-control-feedback"
+          "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
       $("[id=div-agencia]").addClass("has-success has-feedback");
       $("[id=icon-16]").addClass(
-        "fluigicon fluigicon-verified form-control-feedback"
+        "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
       $("[id=help-16]").text("");
     }

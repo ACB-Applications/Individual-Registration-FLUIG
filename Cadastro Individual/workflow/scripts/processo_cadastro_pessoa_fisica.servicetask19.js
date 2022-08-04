@@ -1,30 +1,12 @@
 function servicetask19() {
   var v_CPF = hAPI.getCardValue("CPF") + "";
-
-  v_CPF = v_CPF.replace(".", "");
-  v_CPF = v_CPF.replace(".", "");
-  v_CPF = v_CPF.replace("-", "");
-
-  var v_nomecompleto = hAPI.getCardValue("nomecompleto") + "";
   var v_nomeabreviado = hAPI.getCardValue("nomeabreviado") + "";
+  var v_nomecompleto = hAPI.getCardValue("nomecompleto") + "";
   var v_email = hAPI.getCardValue("email") + "";
-
+  var v_telefonecelular = hAPI.getCardValue("telefonecelular") + "";
   var v_telefonefixo = hAPI.getCardValue("telefonefixo") + "";
 
-  v_telefonefixo = v_telefonefixo.replace("(", "");
-  v_telefonefixo = v_telefonefixo.replace(")", "");
-  v_telefonefixo = v_telefonefixo.replace(" ", "");
-  v_telefonefixo = v_telefonefixo.replace("-", "");
-
-  var v_telefonecelular = hAPI.getCardValue("telefonecelular") + "";
-
-  v_telefonecelular = v_telefonecelular.replace("(", "");
-  v_telefonecelular = v_telefonecelular.replace(")", "");
-  v_telefonecelular = v_telefonecelular.replace(" ", "");
-  v_telefonecelular = v_telefonecelular.replace(" ", "");
-  v_telefonecelular = v_telefonecelular.replace("-", "");
-
-  var v_CEP = parseInt(hAPI.getCardValue("CEP") + "");
+  var v_CEP = parseInt(hAPI.getCardValue("CEP")) + "";
   var v_estado = hAPI.getCardValue("estado") + "";
   var v_cidade = hAPI.getCardValue("cidade") + "";
   var v_bairro = hAPI.getCardValue("bairro") + "";
@@ -32,7 +14,6 @@ function servicetask19() {
 
   try {
     var clientService = fluigAPI.getAuthorizeClientService();
-
     var dados = {
       "tt-fornecedor": [
         {
@@ -51,16 +32,14 @@ function servicetask19() {
       ],
     };
 
-    //hAPI.setTaskComments(getValue("WKUser"), getValue("WKNumProces"),  0, "teste");
-    //hAPI.setTaskComments(getValue("WKUser"), getValue("WKNumProces"),  0, JSON.stringify(dados));
-
     var data = {
       companyId: getValue("WKCompany") + "",
       serviceCode: "apiDatasul",
       endpoint:
         "/dts/datasul-rest/resources/prg/esp/v1/esrest0001/implantaFornecedor",
-      method: "post", // 'delete', 'patch', 'put', 'get'
-      timeoutService: "100", // segundos
+      method: "post", 
+      timeoutService: "100", 
+
       options: {
         encoding: "UTF-8",
         mediaType: "application/json",

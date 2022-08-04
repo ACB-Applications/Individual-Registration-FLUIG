@@ -6,12 +6,12 @@ function validarContaCorrenteInput() {
     if ($("[id=div-conta-corrente]").hasClass("has-error") == false) {
       if ($("[id=div-conta-corrente]").hasClass("has-success") == true) {
         $("[id=div-conta-corrente],[id=icon-17]").removeClass(
-          "has-success has-feedback fluigicon fluigicon-verified form-control-feedback"
+          "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
       $("[id=div-conta-corrente]").addClass("has-error has-feedback");
       $("[id=icon-17]").addClass(
-        "fluigicon fluigicon-remove form-control-feedback"
+        "flaticon flaticon-info icon-sm form-control-feedback"
       );
       $("[name=contacorrente]").attr("style", "border-color:#cc3d3d;");
       $("[id=help-17]").text("Digite os números da conta corrente.");
@@ -21,12 +21,12 @@ function validarContaCorrenteInput() {
     if ($("[id=div-conta-corrente]").hasClass("has-success") == false) {
       if ($("[id=div-conta-corrente]").hasClass("has-error") == true) {
         $("[id=div-conta-corrente],[id=icon-17]").removeClass(
-          "has-error has-feedback fluigicon fluigicon-remove form-control-feedback"
+          "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
       $("[id=div-conta-corrente]").addClass("has-success has-feedback");
       $("[id=icon-17]").addClass(
-        "fluigicon fluigicon-verified form-control-feedback"
+        "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
       $("[id=help-17]").text("");
     }

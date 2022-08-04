@@ -6,12 +6,12 @@ function validarNomeAbreviado() {
     if ($("[id=div-nome-abreviado]").hasClass("has-error") == false) {
       if ($("[id=div-nome-abreviado]").hasClass("has-success") == true) {
         $("[id=div-nome-abreviado],[id=icon-18]").removeClass(
-          "has-success has-feedback fluigicon fluigicon-verified form-control-feedback"
+          "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
       $("[id=div-nome-abreviado]").addClass("has-error has-feedback");
       $("[id=icon-18]").addClass(
-        "fluigicon fluigicon-remove form-control-feedback"
+        "flaticon flaticon-info icon-sm form-control-feedback"
       );
       $("[name=nomeabreviado]").attr("style", "border-color:#cc3d3d;");
       $("[id=help-18]").text("É necessário que digite o nome abreviado.");
@@ -21,12 +21,12 @@ function validarNomeAbreviado() {
     if ($("[id=div-nome-abreviado]").hasClass("has-success") == false) {
       if ($("[id=div-nome-abreviado]").hasClass("has-error") == true) {
         $("[id=div-nome-abreviado],[id=icon-18]").removeClass(
-          "has-error has-feedback fluigicon fluigicon-remove form-control-feedback"
+          "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
       $("[id=div-nome-abreviado]").addClass("has-success has-feedback");
       $("[id=icon-18]").addClass(
-        "fluigicon fluigicon-verified form-control-feedback"
+        "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
       $("[id=help-18]").text("");
     }

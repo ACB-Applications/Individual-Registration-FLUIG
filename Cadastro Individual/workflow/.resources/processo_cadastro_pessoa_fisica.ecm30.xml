@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Cadastro de Pessoa Física</processId>
-      <version>24</version>
+      <version>40</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>867</formId>
@@ -382,7 +382,7 @@
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <expressionOrder>1</expressionOrder>
-        <version>24</version>
+        <version>40</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;statusIntegracao&quot;) == &quot;999&quot;</condition>
@@ -394,7 +394,7 @@
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <expressionOrder>2</expressionOrder>
-        <version>24</version>
+        <version>40</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;codFornecedorIntegracao&quot;) == &quot;&quot;</condition>
@@ -406,7 +406,7 @@
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <expressionOrder>3</expressionOrder>
-        <version>24</version>
+        <version>40</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>true</condition>
@@ -589,7 +589,8 @@
       if (&#xd;
         attachment.getDocumentDescription().indexOf(&quot;.pdf&quot;) &gt; -1 ||&#xd;
         attachment.getDocumentDescription().indexOf(&quot;.png&quot;) &gt; -1 ||&#xd;
-        attachment.getDocumentDescription().indexOf(&quot;.jpeg&quot;) &gt; -1&#xd;
+        attachment.getDocumentDescription().indexOf(&quot;.jpeg&quot;) &gt; -1 ||&#xd;
+        attachment.getDocumentDescription().indexOf(&quot;.jpg&quot;) &gt; -1&#xd;
       ) {&#xd;
         hasAttachment = true;&#xd;
       }&#xd;
@@ -611,31 +612,13 @@
       </workflowProcessEventPK>
       <eventDescription>function servicetask19() {&#xd;
   var v_CPF = hAPI.getCardValue(&quot;CPF&quot;) + &quot;&quot;;&#xd;
-&#xd;
-  v_CPF = v_CPF.replace(&quot;.&quot;, &quot;&quot;);&#xd;
-  v_CPF = v_CPF.replace(&quot;.&quot;, &quot;&quot;);&#xd;
-  v_CPF = v_CPF.replace(&quot;-&quot;, &quot;&quot;);&#xd;
-&#xd;
-  var v_nomecompleto = hAPI.getCardValue(&quot;nomecompleto&quot;) + &quot;&quot;;&#xd;
   var v_nomeabreviado = hAPI.getCardValue(&quot;nomeabreviado&quot;) + &quot;&quot;;&#xd;
+  var v_nomecompleto = hAPI.getCardValue(&quot;nomecompleto&quot;) + &quot;&quot;;&#xd;
   var v_email = hAPI.getCardValue(&quot;email&quot;) + &quot;&quot;;&#xd;
-&#xd;
+  var v_telefonecelular = hAPI.getCardValue(&quot;telefonecelular&quot;) + &quot;&quot;;&#xd;
   var v_telefonefixo = hAPI.getCardValue(&quot;telefonefixo&quot;) + &quot;&quot;;&#xd;
 &#xd;
-  v_telefonefixo = v_telefonefixo.replace(&quot;(&quot;, &quot;&quot;);&#xd;
-  v_telefonefixo = v_telefonefixo.replace(&quot;)&quot;, &quot;&quot;);&#xd;
-  v_telefonefixo = v_telefonefixo.replace(&quot; &quot;, &quot;&quot;);&#xd;
-  v_telefonefixo = v_telefonefixo.replace(&quot;-&quot;, &quot;&quot;);&#xd;
-&#xd;
-  var v_telefonecelular = hAPI.getCardValue(&quot;telefonecelular&quot;) + &quot;&quot;;&#xd;
-&#xd;
-  v_telefonecelular = v_telefonecelular.replace(&quot;(&quot;, &quot;&quot;);&#xd;
-  v_telefonecelular = v_telefonecelular.replace(&quot;)&quot;, &quot;&quot;);&#xd;
-  v_telefonecelular = v_telefonecelular.replace(&quot; &quot;, &quot;&quot;);&#xd;
-  v_telefonecelular = v_telefonecelular.replace(&quot; &quot;, &quot;&quot;);&#xd;
-  v_telefonecelular = v_telefonecelular.replace(&quot;-&quot;, &quot;&quot;);&#xd;
-&#xd;
-  var v_CEP = parseInt(hAPI.getCardValue(&quot;CEP&quot;) + &quot;&quot;);&#xd;
+  var v_CEP = parseInt(hAPI.getCardValue(&quot;CEP&quot;)) + &quot;&quot;;&#xd;
   var v_estado = hAPI.getCardValue(&quot;estado&quot;) + &quot;&quot;;&#xd;
   var v_cidade = hAPI.getCardValue(&quot;cidade&quot;) + &quot;&quot;;&#xd;
   var v_bairro = hAPI.getCardValue(&quot;bairro&quot;) + &quot;&quot;;&#xd;
@@ -643,7 +626,6 @@
 &#xd;
   try {&#xd;
     var clientService = fluigAPI.getAuthorizeClientService();&#xd;
-&#xd;
     var dados = {&#xd;
       &quot;tt-fornecedor&quot;: [&#xd;
         {&#xd;
@@ -662,16 +644,14 @@
       ],&#xd;
     };&#xd;
 &#xd;
-    //hAPI.setTaskComments(getValue(&quot;WKUser&quot;), getValue(&quot;WKNumProces&quot;),  0, &quot;teste&quot;);&#xd;
-    //hAPI.setTaskComments(getValue(&quot;WKUser&quot;), getValue(&quot;WKNumProces&quot;),  0, JSON.stringify(dados));&#xd;
-&#xd;
     var data = {&#xd;
       companyId: getValue(&quot;WKCompany&quot;) + &quot;&quot;,&#xd;
       serviceCode: &quot;apiDatasul&quot;,&#xd;
       endpoint:&#xd;
         &quot;/dts/datasul-rest/resources/prg/esp/v1/esrest0001/implantaFornecedor&quot;,&#xd;
-      method: &quot;post&quot;, // &apos;delete&apos;, &apos;patch&apos;, &apos;put&apos;, &apos;get&apos;&#xd;
-      timeoutService: &quot;100&quot;, // segundos&#xd;
+      method: &quot;post&quot;, &#xd;
+      timeoutService: &quot;100&quot;, &#xd;
+&#xd;
       options: {&#xd;
         encoding: &quot;UTF-8&quot;,&#xd;
         mediaType: &quot;application/json&quot;,&#xd;
@@ -848,7 +828,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>24</version>
+        <version>40</version>
         <linkSequence>11</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -859,7 +839,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>24</version>
+        <version>40</version>
         <linkSequence>20</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -870,7 +850,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>24</version>
+        <version>40</version>
         <linkSequence>20</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -881,7 +861,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>24</version>
+        <version>40</version>
         <linkSequence>22</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -892,7 +872,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>24</version>
+        <version>40</version>
         <linkSequence>29</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -903,7 +883,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>24</version>
+        <version>40</version>
         <linkSequence>29</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -914,7 +894,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>24</version>
+        <version>40</version>
         <linkSequence>31</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -944,7 +924,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>24</processVersion>
+      <processVersion>40</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -954,7 +934,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>24</processVersion>
+      <processVersion>40</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -964,7 +944,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>24</processVersion>
+      <processVersion>40</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -974,7 +954,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>24</processVersion>
+      <processVersion>40</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -984,7 +964,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>24</processVersion>
+      <processVersion>40</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>reject</appField>

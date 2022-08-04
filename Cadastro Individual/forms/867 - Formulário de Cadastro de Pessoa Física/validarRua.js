@@ -3,12 +3,12 @@ function validarRuaInput() {
     if ($("[id=div-rua]").hasClass("has-error") == false) {
       if ($("[id=div-rua]").hasClass("has-success") == true) {
         $("[id=div-rua],[id=icon-13]").removeClass(
-          "has-success has-feedback fluigicon fluigicon-verified form-control-feedback"
+          "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
       $("[id=div-rua]").addClass("has-error has-feedback");
       $("[id=icon-13]").addClass(
-        "fluigicon fluigicon-remove form-control-feedback"
+        "flaticon flaticon-info icon-sm form-control-feedback"
       );
       $("[name=rua]").attr("style", "border-color:#cc3d3d;");
       $("[id=help-13]").text("Digite o nome da rua.");
@@ -18,12 +18,12 @@ function validarRuaInput() {
     if ($("[id=div-rua]").hasClass("has-success") == false) {
       if ($("[id=div-rua]").hasClass("has-error") == true) {
         $("[id=div-rua],[id=icon-13]").removeClass(
-          "has-error has-feedback fluigicon fluigicon-remove form-control-feedback"
+          "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
       $("[id=div-rua]").addClass("has-success has-feedback");
       $("[id=icon-13]").addClass(
-        "fluigicon fluigicon-verified form-control-feedback"
+        "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
       $("[id=help-13]").text("");
     }
