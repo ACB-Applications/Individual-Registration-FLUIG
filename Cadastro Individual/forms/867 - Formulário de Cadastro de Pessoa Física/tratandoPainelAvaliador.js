@@ -1,8 +1,8 @@
 $(function () {
-  handleEvaluatorFeedbackInput();
+  tratandoPainelAvaliador();
 });
 
-function handleEvaluatorFeedbackInput() {
+function tratandoPainelAvaliador() {
   var VISIBILIDADE = buscarModoForm();
   var ATIVIDADE_ATUAL = buscarAtividadeAtual();
 
