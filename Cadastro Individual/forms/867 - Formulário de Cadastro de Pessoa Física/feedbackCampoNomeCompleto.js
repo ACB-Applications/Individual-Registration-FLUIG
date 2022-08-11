@@ -1,31 +1,34 @@
-function validarAgenciaInput() {
-  if ($("[id=agencia]").val() == false || $("[id=agencia]").val().length <= 3) {
-    if ($("[id=div-agencia]").hasClass("has-error") == false) {
-      if ($("[id=div-agencia]").hasClass("has-success") == true) {
-        $("[id=div-agencia],[id=icon-16]").removeClass(
+function feedbackCampoNomeCompleto() {
+  if (
+    $("[id=nomecompleto]").val() == false ||
+    $("[id=nomecompleto]").val().length <= 3
+  ) {
+    if ($("[id=div-nome-completo]").hasClass("has-error") == false) {
+      if ($("[id=div-nome-completo]").hasClass("has-success") == true) {
+        $("[id=div-nome-completo],[id=icon-1]").removeClass(
           "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
-      $("[id=div-agencia]").addClass("has-error has-feedback");
-      $("[id=icon-16]").addClass(
+      $("[id=div-nome-completo]").addClass("has-error has-feedback");
+      $("[id=icon-1]").addClass(
         "flaticon flaticon-info icon-sm form-control-feedback"
       );
-      $("[name=agencia]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-16]").text("Digite o código da agência.");
+      $("[name=nomecompleto]").attr("style", "border-color:#cc3d3d;");
+      $("[id=help-1]").text("Digite o nome completo.");
     }
   } else {
-    $("[name=agencia]").attr("style", "border-color:#1ab83f;");
-    if ($("[id=div-agencia]").hasClass("has-success") == false) {
-      if ($("[id=div-agencia]").hasClass("has-error") == true) {
-        $("[id=div-agencia],[id=icon-16]").removeClass(
+    $("[name=nomecompleto]").attr("style", "border-color:#1ab83f;");
+    if ($("[id=div-nome-completo]").hasClass("has-success") == false) {
+      if ($("[id=div-nome-completo]").hasClass("has-error") == true) {
+        $("[id=div-nome-completo],[id=icon-1]").removeClass(
           "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
-      $("[id=div-agencia]").addClass("has-success has-feedback");
-      $("[id=icon-16]").addClass(
+      $("[id=div-nome-completo]").addClass("has-success has-feedback");
+      $("[id=icon-1]").addClass(
         "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
-      $("[id=help-16]").text("");
+      $("[id=help-1]").text("");
     }
   }
 }
@@ -33,13 +36,13 @@ function validarAgenciaInput() {
 // Versão antiga do código
 // Obs.: Código sem jQuery
 
-// function validarAgenciaInput() {
-//   const valorInput = document.getElementById("agencia").value;
-//   const div = document.querySelector("#div-agencia");
-//   const span = document.querySelector("#icon-16");
-//   const p = document.querySelector("#help-16");
+// function validarNomeCompletoInput() {
+//   const valorInput = document.getElementById("nomecompleto").value;
+//   const div = document.querySelector("#div-nome-completo");
+//   const span = document.querySelector("#icon-1");
+//   const p = document.querySelector("#help-1");
 
-//   if (valorInput == false || valorInput.length <= 3) {
+//   if (valorInput == false || valorInput.length <= 13) {
 //     if (div.classList.contains("has-error") == false) {
 //       if (div.classList.contains("has-success") == true) {
 //         div.classList.remove("has-success");
@@ -56,11 +59,11 @@ function validarAgenciaInput() {
 //       span.classList.add("fluigicon");
 //       span.classList.add("fluigicon-remove");
 //       span.classList.add("form-control-feedback");
-//       $("[name=agencia]").attr("style", "border-color:#cc3d3d;");
-//       p.innerText = "Digite a numeração da Agência do banco";
+//       $("[name=CPF]").attr("style", "border-color:#cc3d3d;");
+//       p.innerText = "É necessário que digite o nome completo.";
 //     }
 //   } else {
-//     $("[name=agencia]").attr("style", "border-color:#1ab83f;");
+//     $("[name=CPF]").attr("style", "border-color:#1ab83f;");
 //     if (div.classList.contains("has-success") == false) {
 //       if (div.classList.contains("has-error") == true) {
 //         div.classList.remove("has-error");

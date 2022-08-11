@@ -1,31 +1,31 @@
-function validarCPFInput() {
-  if ($("[id=CPF]").val() == false || $("[id=CPF]").val().length <= 13) {
-    if ($("[id=div-cpf]").hasClass("has-error") == false) {
-      if ($("[id=div-cpf]").hasClass("has-success") == true) {
-        $("[id=div-cpf],[id=icon-2]").removeClass(
+function feedbackCampoBairro() {
+  if ($("[id=bairro]").val() == false || $("[id=bairro]").val().length <= 0) {
+    if ($("[id=div-bairro]").hasClass("has-error") == false) {
+      if ($("[id=div-bairro]").hasClass("has-success") == true) {
+        $("[id=div-bairro],[id=icon-11]").removeClass(
           "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
-      $("[id=div-cpf]").addClass("has-error has-feedback");
-      $("[id=icon-2]").addClass(
+      $("[id=div-bairro]").addClass("has-error has-feedback");
+      $("[id=icon-11]").addClass(
         "flaticon flaticon-info icon-sm form-control-feedback"
       );
-      $("[name=CPF]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-2]").text("Digite o CPF.");
+      $("[name=bairro]").attr("style", "border-color:#cc3d3d;");
+      $("[id=help-11]").text("Digite o nome do bairro.");
     }
   } else {
-    $("[name=CPF]").attr("style", "border-color:#1ab83f;");
-    if ($("[id=div-cpf]").hasClass("has-success") == false) {
-      if ($("[id=div-cpf]").hasClass("has-error") == true) {
-        $("[id=div-cpf],[id=icon-2]").removeClass(
+    $("[name=bairro]").attr("style", "border-color:#1ab83f;");
+    if ($("[id=div-bairro]").hasClass("has-success") == false) {
+      if ($("[id=div-bairro]").hasClass("has-error") == true) {
+        $("[id=div-bairro],[id=icon-11]").removeClass(
           "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
-      $("[id=div-cpf]").addClass("has-success has-feedback");
-      $("[id=icon-2]").addClass(
+      $("[id=div-bairro]").addClass("has-success has-feedback");
+      $("[id=icon-11]").addClass(
         "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
-      $("[id=help-2]").text("");
+      $("[id=help-11]").text("");
     }
   }
 }
@@ -33,13 +33,13 @@ function validarCPFInput() {
 // Versão antiga do código
 // Obs.: Código sem jQuery
 
-// function validarCPFInput() {
-//   const valorInput = document.getElementById("CPF").value;
-//   const div = document.querySelector("#div-cpf");
-//   const span = document.querySelector("#icon-2");
-//   const p = document.querySelector("#help-2");
+// function validarBairroInput() {
+//   const valorInput = document.getElementById("bairro").value;
+//   const div = document.querySelector("#div-bairro");
+//   const span = document.querySelector("#icon-11");
+//   const p = document.querySelector("#help-11");
 
-//   if (valorInput == false || valorInput.length <= 13) {
+//   if (valorInput == false || valorInput.length <= 0) {
 //     if (div.classList.contains("has-error") == false) {
 //       if (div.classList.contains("has-success") == true) {
 //         div.classList.remove("has-success");
@@ -56,11 +56,11 @@ function validarCPFInput() {
 //       span.classList.add("fluigicon");
 //       span.classList.add("fluigicon-remove");
 //       span.classList.add("form-control-feedback");
-//       $("[name=CPF]").attr("style", "border-color:#cc3d3d;");
-//       p.innerText = "É necessário que digite o CPF.";
+//       $("[name=bairro]").attr("style", "border-color:#cc3d3d;");
+//       p.innerText = "É necessário que digite o nome do bairro";
 //     }
 //   } else {
-//     $("[name=CPF]").attr("style", "border-color:#1ab83f;");
+//     $("[name=bairro]").attr("style", "border-color:#1ab83f;");
 //     if (div.classList.contains("has-success") == false) {
 //       if (div.classList.contains("has-error") == true) {
 //         div.classList.remove("has-error");
