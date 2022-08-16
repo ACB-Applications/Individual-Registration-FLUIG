@@ -1,4 +1,4 @@
-function validarNomeBancoInput() {
+function feedbackCampoNomeBanco() {
   if (
     $("[id=nomebanco]").val() == false ||
     $("[id=nomebanco]").val().length <= 0

@@ -1,31 +1,31 @@
-function validarEstadoInput() {
-  if ($("[id=estado]").val() == false || $("[id=estado]").val().length <= 0) {
-    if ($("[id=div-estado]").hasClass("has-error") == false) {
-      if ($("[id=div-estado]").hasClass("has-success") == true) {
-        $("[id=div-estado],[id=icon-9]").removeClass(
+function feedbackCampoCPF() {
+  if ($("[id=CPF]").val() == false || $("[id=CPF]").val().length <= 13) {
+    if ($("[id=div-cpf]").hasClass("has-error") == false) {
+      if ($("[id=div-cpf]").hasClass("has-success") == true) {
+        $("[id=div-cpf],[id=icon-2]").removeClass(
           "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
-      $("[id=div-estado]").addClass("has-error has-feedback");
-      $("[id=icon-9]").addClass(
+      $("[id=div-cpf]").addClass("has-error has-feedback");
+      $("[id=icon-2]").addClass(
         "flaticon flaticon-info icon-sm form-control-feedback"
       );
-      $("[name=estado]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-9]").text("Digite o nome do estado.");
+      $("[name=CPF]").attr("style", "border-color:#cc3d3d;");
+      $("[id=help-2]").text("Digite o CPF.");
     }
   } else {
-    $("[name=estado]").attr("style", "border-color:#1ab83f;");
-    if ($("[id=div-estado]").hasClass("has-success") == false) {
-      if ($("[id=div-estado]").hasClass("has-error") == true) {
-        $("[id=div-estado],[id=icon-9]").removeClass(
+    $("[name=CPF]").attr("style", "border-color:#1ab83f;");
+    if ($("[id=div-cpf]").hasClass("has-success") == false) {
+      if ($("[id=div-cpf]").hasClass("has-error") == true) {
+        $("[id=div-cpf],[id=icon-2]").removeClass(
           "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
-      $("[id=div-estado]").addClass("has-success has-feedback");
-      $("[id=icon-9]").addClass(
+      $("[id=div-cpf]").addClass("has-success has-feedback");
+      $("[id=icon-2]").addClass(
         "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
-      $("[id=help-9]").text("");
+      $("[id=help-2]").text("");
     }
   }
 }
@@ -33,13 +33,13 @@ function validarEstadoInput() {
 // Versão antiga do código
 // Obs.: Código sem jQuery
 
-// function validarEstadoInput() {
-//   const valorInput = document.getElementById("estado").value;
-//   const div = document.querySelector("#div-estado");
-//   const span = document.querySelector("#icon-9");
-//   const p = document.querySelector("#help-9");
+// function validarCPFInput() {
+//   const valorInput = document.getElementById("CPF").value;
+//   const div = document.querySelector("#div-cpf");
+//   const span = document.querySelector("#icon-2");
+//   const p = document.querySelector("#help-2");
 
-//   if (valorInput == false || valorInput.length <= 0) {
+//   if (valorInput == false || valorInput.length <= 13) {
 //     if (div.classList.contains("has-error") == false) {
 //       if (div.classList.contains("has-success") == true) {
 //         div.classList.remove("has-success");
@@ -56,11 +56,11 @@ function validarEstadoInput() {
 //       span.classList.add("fluigicon");
 //       span.classList.add("fluigicon-remove");
 //       span.classList.add("form-control-feedback");
-//       $("[name=estado]").attr("style", "border-color:#cc3d3d;");
-//       p.innerText = "Digite o nome do estado.";
+//       $("[name=CPF]").attr("style", "border-color:#cc3d3d;");
+//       p.innerText = "É necessário que digite o CPF.";
 //     }
 //   } else {
-//     $("[name=estado]").attr("style", "border-color:#1ab83f;");
+//     $("[name=CPF]").attr("style", "border-color:#1ab83f;");
 //     if (div.classList.contains("has-success") == false) {
 //       if (div.classList.contains("has-error") == true) {
 //         div.classList.remove("has-error");

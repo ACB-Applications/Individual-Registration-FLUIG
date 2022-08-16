@@ -1,34 +1,31 @@
-function validarNomeAbreviado() {
-  if (
-    $("[id=nome-abreviado]").val() == false ||
-    $("[id=nome-abreviado]").val().length <= 3
-  ) {
-    if ($("[id=div-nome-abreviado]").hasClass("has-error") == false) {
-      if ($("[id=div-nome-abreviado]").hasClass("has-success") == true) {
-        $("[id=div-nome-abreviado],[id=icon-18]").removeClass(
+function feedbackCampoAgencia() {
+  if ($("[id=agencia]").val() == false || $("[id=agencia]").val().length <= 3) {
+    if ($("[id=div-agencia]").hasClass("has-error") == false) {
+      if ($("[id=div-agencia]").hasClass("has-success") == true) {
+        $("[id=div-agencia],[id=icon-16]").removeClass(
           "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
-      $("[id=div-nome-abreviado]").addClass("has-error has-feedback");
-      $("[id=icon-18]").addClass(
+      $("[id=div-agencia]").addClass("has-error has-feedback");
+      $("[id=icon-16]").addClass(
         "flaticon flaticon-info icon-sm form-control-feedback"
       );
-      $("[name=nomeabreviado]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-18]").text("É necessário que digite o nome abreviado.");
+      $("[name=agencia]").attr("style", "border-color:#cc3d3d;");
+      $("[id=help-16]").text("Digite o código da agência.");
     }
   } else {
-    $("[name=nomeabreviado]").attr("style", "border-color:#1ab83f;");
-    if ($("[id=div-nome-abreviado]").hasClass("has-success") == false) {
-      if ($("[id=div-nome-abreviado]").hasClass("has-error") == true) {
-        $("[id=div-nome-abreviado],[id=icon-18]").removeClass(
+    $("[name=agencia]").attr("style", "border-color:#1ab83f;");
+    if ($("[id=div-agencia]").hasClass("has-success") == false) {
+      if ($("[id=div-agencia]").hasClass("has-error") == true) {
+        $("[id=div-agencia],[id=icon-16]").removeClass(
           "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
-      $("[id=div-nome-abreviado]").addClass("has-success has-feedback");
-      $("[id=icon-18]").addClass(
+      $("[id=div-agencia]").addClass("has-success has-feedback");
+      $("[id=icon-16]").addClass(
         "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
-      $("[id=help-18]").text("");
+      $("[id=help-16]").text("");
     }
   }
 }
@@ -36,13 +33,13 @@ function validarNomeAbreviado() {
 // Versão antiga do código
 // Obs.: Código sem jQuery
 
-// function validarNomeAbreviado() {
-//   const valorInput = document.getElementById("nome-abreviado").value;
-//   const div = document.querySelector("#div-nome-abreviado");
-//   const span = document.querySelector("#icon-18");
-//   const p = document.querySelector("#help-18");
+// function validarAgenciaInput() {
+//   const valorInput = document.getElementById("agencia").value;
+//   const div = document.querySelector("#div-agencia");
+//   const span = document.querySelector("#icon-16");
+//   const p = document.querySelector("#help-16");
 
-//   if (valorInput == false || valorInput.length <= 11) {
+//   if (valorInput == false || valorInput.length <= 3) {
 //     if (div.classList.contains("has-error") == false) {
 //       if (div.classList.contains("has-success") == true) {
 //         div.classList.remove("has-success");
@@ -59,11 +56,11 @@ function validarNomeAbreviado() {
 //       span.classList.add("fluigicon");
 //       span.classList.add("fluigicon-remove");
 //       span.classList.add("form-control-feedback");
-//       $("[name=nomeabreviado]").attr("style", "border-color:#cc3d3d;");
-//       p.innerText = "É necessário que digite o nome abreviado.";
+//       $("[name=agencia]").attr("style", "border-color:#cc3d3d;");
+//       p.innerText = "Digite a numeração da Agência do banco";
 //     }
 //   } else {
-//     $("[name=nomeabreviado]").attr("style", "border-color:#1ab83f;");
+//     $("[name=agencia]").attr("style", "border-color:#1ab83f;");
 //     if (div.classList.contains("has-success") == false) {
 //       if (div.classList.contains("has-error") == true) {
 //         div.classList.remove("has-error");

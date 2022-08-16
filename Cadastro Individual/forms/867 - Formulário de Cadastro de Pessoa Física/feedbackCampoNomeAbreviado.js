@@ -1,31 +1,34 @@
-function validarBairroInput() {
-  if ($("[id=bairro]").val() == false || $("[id=bairro]").val().length <= 0) {
-    if ($("[id=div-bairro]").hasClass("has-error") == false) {
-      if ($("[id=div-bairro]").hasClass("has-success") == true) {
-        $("[id=div-bairro],[id=icon-11]").removeClass(
+function feedbackCampoNomeAbreviado() {
+  if (
+    $("[id=nome-abreviado]").val() == false ||
+    $("[id=nome-abreviado]").val().length <= 3
+  ) {
+    if ($("[id=div-nome-abreviado]").hasClass("has-error") == false) {
+      if ($("[id=div-nome-abreviado]").hasClass("has-success") == true) {
+        $("[id=div-nome-abreviado],[id=icon-18]").removeClass(
           "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
-      $("[id=div-bairro]").addClass("has-error has-feedback");
-      $("[id=icon-11]").addClass(
+      $("[id=div-nome-abreviado]").addClass("has-error has-feedback");
+      $("[id=icon-18]").addClass(
         "flaticon flaticon-info icon-sm form-control-feedback"
       );
-      $("[name=bairro]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-11]").text("Digite o nome do bairro.");
+      $("[name=nomeabreviado]").attr("style", "border-color:#cc3d3d;");
+      $("[id=help-18]").text("É necessário que digite o nome abreviado.");
     }
   } else {
-    $("[name=bairro]").attr("style", "border-color:#1ab83f;");
-    if ($("[id=div-bairro]").hasClass("has-success") == false) {
-      if ($("[id=div-bairro]").hasClass("has-error") == true) {
-        $("[id=div-bairro],[id=icon-11]").removeClass(
+    $("[name=nomeabreviado]").attr("style", "border-color:#1ab83f;");
+    if ($("[id=div-nome-abreviado]").hasClass("has-success") == false) {
+      if ($("[id=div-nome-abreviado]").hasClass("has-error") == true) {
+        $("[id=div-nome-abreviado],[id=icon-18]").removeClass(
           "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
-      $("[id=div-bairro]").addClass("has-success has-feedback");
-      $("[id=icon-11]").addClass(
+      $("[id=div-nome-abreviado]").addClass("has-success has-feedback");
+      $("[id=icon-18]").addClass(
         "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
-      $("[id=help-11]").text("");
+      $("[id=help-18]").text("");
     }
   }
 }
@@ -33,13 +36,13 @@ function validarBairroInput() {
 // Versão antiga do código
 // Obs.: Código sem jQuery
 
-// function validarBairroInput() {
-//   const valorInput = document.getElementById("bairro").value;
-//   const div = document.querySelector("#div-bairro");
-//   const span = document.querySelector("#icon-11");
-//   const p = document.querySelector("#help-11");
+// function validarNomeAbreviado() {
+//   const valorInput = document.getElementById("nome-abreviado").value;
+//   const div = document.querySelector("#div-nome-abreviado");
+//   const span = document.querySelector("#icon-18");
+//   const p = document.querySelector("#help-18");
 
-//   if (valorInput == false || valorInput.length <= 0) {
+//   if (valorInput == false || valorInput.length <= 11) {
 //     if (div.classList.contains("has-error") == false) {
 //       if (div.classList.contains("has-success") == true) {
 //         div.classList.remove("has-success");
@@ -56,11 +59,11 @@ function validarBairroInput() {
 //       span.classList.add("fluigicon");
 //       span.classList.add("fluigicon-remove");
 //       span.classList.add("form-control-feedback");
-//       $("[name=bairro]").attr("style", "border-color:#cc3d3d;");
-//       p.innerText = "É necessário que digite o nome do bairro";
+//       $("[name=nomeabreviado]").attr("style", "border-color:#cc3d3d;");
+//       p.innerText = "É necessário que digite o nome abreviado.";
 //     }
 //   } else {
-//     $("[name=bairro]").attr("style", "border-color:#1ab83f;");
+//     $("[name=nomeabreviado]").attr("style", "border-color:#1ab83f;");
 //     if (div.classList.contains("has-success") == false) {
 //       if (div.classList.contains("has-error") == true) {
 //         div.classList.remove("has-error");

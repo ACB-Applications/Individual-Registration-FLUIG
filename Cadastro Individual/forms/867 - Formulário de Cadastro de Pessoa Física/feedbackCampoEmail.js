@@ -1,4 +1,4 @@
-// function validarEmailInput() {
+// function feedbackCampoEmail() {
 //   var emailValido = false;
 //   const regex = /^([._a-zA-Z0-9]+)@([a-zA-Z]+).([a-zA-Z]){2,8}$/;
 //   const regexo = /^([._a-zA-Z0-9]+)@([a-zA-Z]+).([a-zA-Z]){2,3}.[a-zA-Z]{1,3}$/;

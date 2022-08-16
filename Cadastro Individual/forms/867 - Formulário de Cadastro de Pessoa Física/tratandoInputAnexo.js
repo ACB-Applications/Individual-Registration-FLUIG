@@ -1,8 +1,8 @@
 $(function () {
-  handleAttachmentInput();
+  tratandoInputAnexo();
 });
 
-function handleAttachmentInput() {
+function tratandoInputAnexo() {
   var VISIBILIDADE = buscarModoForm();
   var ATIVIDADE_ATUAL = buscarAtividadeAtual();
 

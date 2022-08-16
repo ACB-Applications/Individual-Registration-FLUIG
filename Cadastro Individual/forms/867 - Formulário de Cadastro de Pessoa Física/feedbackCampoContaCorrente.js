@@ -1,34 +1,34 @@
-function validarCodigoBancoInput() {
+function feedbackCampoContaCorrente() {
   if (
-    $("[id=codigobanco]").val() == false &&
-    $("[id=codigobanco]").val().length <= 2
+    $("[id=contacorrente]").val() == false ||
+    $("[id=contacorrente]").val().length <= 3
   ) {
-    if ($("[id=codigo-banco]").hasClass("has-error") == false) {
-      if ($("[id=div-codigo-banco]").hasClass("has-success") == true) {
-        $("[id=div-codigo-banco],[id=icon-15]").removeClass(
+    if ($("[id=div-conta-corrente]").hasClass("has-error") == false) {
+      if ($("[id=div-conta-corrente]").hasClass("has-success") == true) {
+        $("[id=div-conta-corrente],[id=icon-17]").removeClass(
           "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
-      $("[id=div-codigo-banco]").addClass("has-error has-feedback");
-      $("[id=icon-15]").addClass(
+      $("[id=div-conta-corrente]").addClass("has-error has-feedback");
+      $("[id=icon-17]").addClass(
         "flaticon flaticon-info icon-sm form-control-feedback"
       );
-      $("[name=codigobanco]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-15]").text("Digite o código do banco.");
+      $("[name=contacorrente]").attr("style", "border-color:#cc3d3d;");
+      $("[id=help-17]").text("Digite os números da conta corrente.");
     }
   } else {
-    $("[name=codigobanco]").attr("style", "border-color:#1ab83f;");
-    if ($("[id=div-codigo-banco]").hasClass("has-success") == false) {
-      if ($("[id=div-codigo-banco]").hasClass("has-error") == true) {
-        $("[id=div-codigo-banco],[id=icon-15]").removeClass(
+    $("[name=contacorrente]").attr("style", "border-color:#1ab83f;");
+    if ($("[id=div-conta-corrente]").hasClass("has-success") == false) {
+      if ($("[id=div-conta-corrente]").hasClass("has-error") == true) {
+        $("[id=div-conta-corrente],[id=icon-17]").removeClass(
           "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
-      $("[id=div-codigo-banco]").addClass("has-success has-feedback");
-      $("[id=icon-15]").addClass(
+      $("[id=div-conta-corrente]").addClass("has-success has-feedback");
+      $("[id=icon-17]").addClass(
         "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
-      $("[id=help-15]").text("");
+      $("[id=help-17]").text("");
     }
   }
 }
@@ -36,13 +36,13 @@ function validarCodigoBancoInput() {
 // Versão antiga do código
 // Obs.: Código sem jQuery
 
-// function validarCodigoBancoInput() {
-//   const valorInput = document.getElementById("codigobanco").value;
-//   const div = document.querySelector("#div-codigo-banco");
-//   const span = document.querySelector("#icon-15");
-//   const p = document.querySelector("#help-15");
+// function validarContaCorrenteInput() {
+//   const valorInput = document.getElementById("contacorrente").value;
+//   const div = document.querySelector("#div-conta-corrente");
+//   const span = document.querySelector("#icon-17");
+//   const p = document.querySelector("#help-17");
 
-//   if (valorInput == false || valorInput.length <= 2) {
+//   if (valorInput == false || valorInput.length <= 8) {
 //     if (div.classList.contains("has-error") == false) {
 //       if (div.classList.contains("has-success") == true) {
 //         div.classList.remove("has-success");
@@ -59,11 +59,11 @@ function validarCodigoBancoInput() {
 //       span.classList.add("fluigicon");
 //       span.classList.add("fluigicon-remove");
 //       span.classList.add("form-control-feedback");
-//       $("[name=codigobanco]").attr("style", "border-color:#cc3d3d;");
-//       p.innerText = "Digite o código do banco";
+//       $("[name=contacorrente]").attr("style", "border-color:#cc3d3d;");
+//       p.innerText = "Digite a numeração da conta corrente";
 //     }
 //   } else {
-//     $("[name=codigobanco]").attr("style", "border-color:#1ab83f;");
+//     $("[name=contacorrente]").attr("style", "border-color:#1ab83f;");
 //     if (div.classList.contains("has-success") == false) {
 //       if (div.classList.contains("has-error") == true) {
 //         div.classList.remove("has-error");

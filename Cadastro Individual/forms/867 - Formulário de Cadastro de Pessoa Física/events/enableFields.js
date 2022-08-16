@@ -6,14 +6,14 @@ function enableFields(form) {
   }
 
   if (ATIVIDADE_ATUAL == 9) {
-    bloquearCampoAprovador(form);
+    bloquearPainelAprovador(form);
   }
 
   if (ATIVIDADE_ATUAL == 28) {
     // bloquearCampoRespostaIntegracao();
   }
 }
-function bloquearCampoAprovador(form) {
+function bloquearPainelAprovador(form) {
   form.setEnabled("observadorAprovador", false);
 }
 function bloquearCampoRespostaIntegracao(form) {

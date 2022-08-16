@@ -1,147 +1,147 @@
 $(function () {
-  handleFeedbacks();
+  tratandoFeedbacks();
 });
 
-function handleFeedbacks() {
+function tratandoFeedbacks() {
   var VISIBILIDADE = buscarModoForm();
   var ATIVIDADE_ATUAL = buscarAtividadeAtual();
 
   if (ATIVIDADE_ATUAL == 12 || ATIVIDADE_ATUAL == 0) {
-    sairCampo();
-    feedbackToClient();
+    eventoSairCampo();
+    feedbackCampo();
   } else if (ATIVIDADE_ATUAL == 9) {
-    sairCampo();
-    feedbackToClient();
+    eventoSairCampo();
+    feedbackCampo();
   }
 }
 
 // Agrupa as functions responsáveis por fazer o feedback visual do campo, para simplificar a chamada na condicional.
-function feedbackToClient() {
-  regrasCampoCPF();
-  regrasCampoNomeCompleto();
-  regrasCampoEmail();
-  regrasCampoCEP();
-  regrasCampoEstado();
-  regrasCampoCidade();
-  regrasCampoBairro();
-  regrasCampoRua();
-  regrasCampoNomeBanco();
-  regrasCampoCodigoBanco();
-  regrasCampoAgencia();
-  regrasCampoContaCorrente();
+function feedbackCampo() {
+  campoCPF();
+  campoNomeCompleto();
+  campoEmail();
+  campoCEP();
+  campoEstado();
+  campoCidade();
+  campoBairro();
+  campoRua();
+  campoNomeBanco();
+  campoCodigoBanco();
+  campoAgencia();
+  campoContaCorrente();
 }
 
 // Funções de chamada de feedback visual dos inputs
-function regrasCampoCPF() {
+function campoCPF() {
   $("[name=CPF]").on("keyup", function () {
-    validarCPFInput();
+    feedbackCampoCPF();
   });
   $("[name=CPF]").on("blur", function () {
-    validarCPFInput();
+    feedbackCampoCPF();
   });
 }
 
-function regrasCampoNomeCompleto() {
+function campoNomeCompleto() {
   $("[name=nomecompleto]").on("keyup", function () {
-    validarNomeCompletoInput();
+    feedbackCampoNomeCompleto();
   });
   $("[name=nomecompleto]").on("blur", function () {
-    validarNomeCompletoInput();
+    feedbackCampoNomeCompleto();
   });
 }
 
-function regrasCampoEmail() {
+function campoEmail() {
   $("[name=email]").on("keyup", function () {
-    validarEmailInput();
+    feedbackCampoEmail();
   });
   $("[name=email]").on("blur", function () {
-    validarEmailInput();
+    feedbackCampoEmail();
   });
 }
 
-function regrasCampoCEP() {
+function campoCEP() {
   $("[name=CEP]").on("keyup", function () {
-    validarCEPInput();
+    feedbackCampoCEP();
   });
   $("[name=CEP]").on("blur", function () {
-    validarCEPInput();
+    feedbackCampoCEP();
   });
 }
 
-function regrasCampoEstado() {
+function campoEstado() {
   $("[name=estado]").on("keyup", function () {
-    validarEstadoInput();
+    feedbackCampoEstado();
   });
   $("[name=estado]").on("blur", function () {
-    validarEstadoInput();
+    feedbackCampoEstado();
   });
 }
 
-function regrasCampoCidade() {
+function campoCidade() {
   $("[name=cidade]").on("keyup", function () {
-    validarCidadeInput();
+    feedbackCampoCidade();
   });
   $("[name=cidade]").on("blur", function () {
-    validarCidadeInput();
+    feedbackCampoCidade();
   });
 }
 
-function regrasCampoBairro() {
+function campoBairro() {
   $("[name=bairro]").on("keyup", function () {
-    validarBairroInput();
+    feedbackCampoBairro();
   });
   $("[name=bairro]").on("blur", function () {
-    validarBairroInput();
+    feedbackCampoBairro();
   });
 }
 
-function regrasCampoRua() {
+function campoRua() {
   $("[name=rua]").on("keyup", function () {
-    validarRuaInput();
+    feedbackCampoRua();
   });
   $("[name=rua]").on("blur", function () {
-    validarRuaInput();
+    feedbackCampoRua();
   });
 }
 
-function regrasCampoNomeBanco() {
+function campoNomeBanco() {
   $("[name=nomebanco]").on("keyup", function () {
-    validarNomeBancoInput();
+    feedbackCampoNomeBanco();
   });
   $("[name=nomebanco]").on("blur", function () {
-    validarNomeBancoInput();
+    feedbackCampoNomeBanco();
   });
 }
 
-function regrasCampoCodigoBanco() {
+function campoCodigoBanco() {
   $("[name=codigobanco]").on("keyup", function () {
-    validarCodigoBancoInput();
+    feedbackCampoCodigoBanco();
   });
   $("[name=codigobanco]").on("blur", function () {
-    validarCodigoBancoInput();
+    feedbackCampoCodigoBanco();
   });
 }
 
-function regrasCampoAgencia() {
+function campoAgencia() {
   $("[name=agencia]").on("keyup", function () {
-    validarAgenciaInput();
+    feedbackCampoAgencia();
   });
   $("[name=agencia]").on("blur", function () {
-    validarAgenciaInput();
+    feedbackCampoAgencia();
   });
 }
 
-function regrasCampoContaCorrente() {
+function campoContaCorrente() {
   $("[name=contacorrente]").on("keyup", function () {
-    validarContaCorrenteInput();
+    feedbackCampoContaCorrente();
   });
   $("[name=contacorrente]").on("blur", function () {
-    validarContaCorrenteInput();
+    feedbackCampoContaCorrente();
   });
 }
 
 // Ação de clicar fora ou sair do campo
-function sairCampo() {
+function eventoSairCampo() {
   $(
     "[name=CPF],[name=nomecompleto],[name=CEP],[name=estado],[name=cidade],[name=bairro],[name=rua],[name=nomebanco],[name=codigobanco],[name=agencia],[name=contacorrente]"
   ).on("blur", function (eval) {

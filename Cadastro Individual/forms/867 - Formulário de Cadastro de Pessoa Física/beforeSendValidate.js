@@ -7,7 +7,7 @@ var beforeSendValidate = function (numState, nextState) {
   var vazio = " não pode ser vazio<br>";
 
   if (PROXIMA_ATIVIDADE == 19) {
-    removerAprovador();
+    removerPainelAprovador();
   }
 
   if (ATIVIDADE_ATUAL == 12 || ATIVIDADE_ATUAL == 0 || ATIVIDADE_ATUAL == 9) {
@@ -140,7 +140,7 @@ var beforeSendValidate = function (numState, nextState) {
 };
 
 // Função que remove o campo de observação
-function removerAprovador() {
+function removerPainelAprovador() {
   $(".painelAprovador").hide();
 }
 

@@ -1,34 +1,31 @@
-function validarContaCorrenteInput() {
-  if (
-    $("[id=contacorrente]").val() == false ||
-    $("[id=contacorrente]").val().length <= 3
-  ) {
-    if ($("[id=div-conta-corrente]").hasClass("has-error") == false) {
-      if ($("[id=div-conta-corrente]").hasClass("has-success") == true) {
-        $("[id=div-conta-corrente],[id=icon-17]").removeClass(
+function feedbackCampoRua() {
+  if ($("[id=rua]").val() == false || $("[id=rua]").val().length <= 3) {
+    if ($("[id=div-rua]").hasClass("has-error") == false) {
+      if ($("[id=div-rua]").hasClass("has-success") == true) {
+        $("[id=div-rua],[id=icon-13]").removeClass(
           "has-success has-feedback flaticon flaticon-check-circle icon-sm form-control-feedback"
         );
       }
-      $("[id=div-conta-corrente]").addClass("has-error has-feedback");
-      $("[id=icon-17]").addClass(
+      $("[id=div-rua]").addClass("has-error has-feedback");
+      $("[id=icon-13]").addClass(
         "flaticon flaticon-info icon-sm form-control-feedback"
       );
-      $("[name=contacorrente]").attr("style", "border-color:#cc3d3d;");
-      $("[id=help-17]").text("Digite os números da conta corrente.");
+      $("[name=rua]").attr("style", "border-color:#cc3d3d;");
+      $("[id=help-13]").text("Digite o nome da rua.");
     }
   } else {
-    $("[name=contacorrente]").attr("style", "border-color:#1ab83f;");
-    if ($("[id=div-conta-corrente]").hasClass("has-success") == false) {
-      if ($("[id=div-conta-corrente]").hasClass("has-error") == true) {
-        $("[id=div-conta-corrente],[id=icon-17]").removeClass(
+    $("[name=rua]").attr("style", "border-color:#1ab83f;");
+    if ($("[id=div-rua]").hasClass("has-success") == false) {
+      if ($("[id=div-rua]").hasClass("has-error") == true) {
+        $("[id=div-rua],[id=icon-13]").removeClass(
           "has-error has-feedback flaticon flaticon-info icon-sm form-control-feedback"
         );
       }
-      $("[id=div-conta-corrente]").addClass("has-success has-feedback");
-      $("[id=icon-17]").addClass(
+      $("[id=div-rua]").addClass("has-success has-feedback");
+      $("[id=icon-13]").addClass(
         "flaticon flaticon-check-circle icon-sm form-control-feedback"
       );
-      $("[id=help-17]").text("");
+      $("[id=help-13]").text("");
     }
   }
 }
@@ -36,13 +33,13 @@ function validarContaCorrenteInput() {
 // Versão antiga do código
 // Obs.: Código sem jQuery
 
-// function validarContaCorrenteInput() {
-//   const valorInput = document.getElementById("contacorrente").value;
-//   const div = document.querySelector("#div-conta-corrente");
-//   const span = document.querySelector("#icon-17");
-//   const p = document.querySelector("#help-17");
+// function validarRuaInput() {
+//   const valorInput = document.getElementById("rua").value;
+//   const div = document.querySelector("#div-rua");
+//   const span = document.querySelector("#icon-13");
+//   const p = document.querySelector("#help-13");
 
-//   if (valorInput == false || valorInput.length <= 8) {
+//   if (valorInput == false || valorInput.length <= 0) {
 //     if (div.classList.contains("has-error") == false) {
 //       if (div.classList.contains("has-success") == true) {
 //         div.classList.remove("has-success");
@@ -59,11 +56,11 @@ function validarContaCorrenteInput() {
 //       span.classList.add("fluigicon");
 //       span.classList.add("fluigicon-remove");
 //       span.classList.add("form-control-feedback");
-//       $("[name=contacorrente]").attr("style", "border-color:#cc3d3d;");
-//       p.innerText = "Digite a numeração da conta corrente";
+//       $("[name=rua]").attr("style", "border-color:#cc3d3d;");
+//       p.innerText = "Digite o nome da rua";
 //     }
 //   } else {
-//     $("[name=contacorrente]").attr("style", "border-color:#1ab83f;");
+//     $("[name=rua]").attr("style", "border-color:#1ab83f;");
 //     if (div.classList.contains("has-success") == false) {
 //       if (div.classList.contains("has-error") == true) {
 //         div.classList.remove("has-error");

@@ -1,8 +1,8 @@
 $(function () {
-  handleShortNameInput();
+  tratandoEventosCampoNomeAbreviado();
 });
 
-function handleShortNameInput() {
+function tratandoEventosCampoNomeAbreviado() {
   var VISIBILIDADE = buscarModoForm();
   var ATIVIDADE_ATUAL = buscarAtividadeAtual();
 
