@@ -1,5 +1,8 @@
 function servicetask19() {
   var v_CPF = hAPI.getCardValue("CPF") + "";
+  
+  v_CPF = v_CPF.replace(".","").replace(".","").replace("-","");
+  
   var v_nomeabreviado = hAPI.getCardValue("nomeabreviado") + "";
   var v_nomecompleto = hAPI.getCardValue("nomecompleto") + "";
   var v_email = hAPI.getCardValue("email") + "";
@@ -14,10 +17,10 @@ function servicetask19() {
 
   try {
     var clientService = fluigAPI.getAuthorizeClientService();
+        
+    
     var dados = {
-      "tt-fornecedor": [
-        {
-          cCgc: v_CPF,
+          cCgc: V_CPF,
           cNome: v_nomecompleto,
           nomeAbrev: v_nomeabreviado,
           cEmail: v_email,
@@ -25,11 +28,10 @@ function servicetask19() {
           cFoneFixo: v_telefonefixo,
           iCep: v_CEP,
           cUF: v_estado,
-          cCicade: v_cidade,
+          cCidade: v_cidade,
           cBairro: v_bairro,
+          //iNum: 999, //provisorio
           cRua: v_rua,
-        },
-      ],
     };
 
     var data = {
@@ -44,7 +46,7 @@ function servicetask19() {
         encoding: "UTF-8",
         mediaType: "application/json",
         //useSSL:true,
-        //crossDomain: true
+        crossDomain: true
       },
 
       headers: {

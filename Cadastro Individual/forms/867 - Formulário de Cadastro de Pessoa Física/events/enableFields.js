@@ -10,7 +10,7 @@ function enableFields(form) {
   }
 
   if (ATIVIDADE_ATUAL == 28) {
-    bloquearCampoRespostaIntegracao();
+    // bloquearCampoRespostaIntegracao();
   }
 }
 function bloquearCampoAprovador(form) {

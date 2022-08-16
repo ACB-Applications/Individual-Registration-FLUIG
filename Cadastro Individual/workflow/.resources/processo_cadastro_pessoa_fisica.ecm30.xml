@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Cadastro de Pessoa Física</processId>
-      <version>40</version>
+      <version>45</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>867</formId>
@@ -382,7 +382,7 @@
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <expressionOrder>1</expressionOrder>
-        <version>40</version>
+        <version>45</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;statusIntegracao&quot;) == &quot;999&quot;</condition>
@@ -394,7 +394,7 @@
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <expressionOrder>2</expressionOrder>
-        <version>40</version>
+        <version>45</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;codFornecedorIntegracao&quot;) == &quot;&quot;</condition>
@@ -406,7 +406,7 @@
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
         <expressionOrder>3</expressionOrder>
-        <version>40</version>
+        <version>45</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>true</condition>
@@ -612,128 +612,148 @@
       </workflowProcessEventPK>
       <eventDescription>function servicetask19() {&#xd;
   var v_CPF = hAPI.getCardValue(&quot;CPF&quot;) + &quot;&quot;;&#xd;
+&#xd;
+  v_CPF = v_CPF.replace(&quot;.&quot;, &quot;&quot;);&#xd;
+  v_CPF = v_CPF.replace(&quot;.&quot;, &quot;&quot;);&#xd;
+  v_CPF = v_CPF.replace(&quot;-&quot;, &quot;&quot;);&#xd;
+&#xd;
   var v_nomeabreviado = hAPI.getCardValue(&quot;nomeabreviado&quot;) + &quot;&quot;;&#xd;
   var v_nomecompleto = hAPI.getCardValue(&quot;nomecompleto&quot;) + &quot;&quot;;&#xd;
   var v_email = hAPI.getCardValue(&quot;email&quot;) + &quot;&quot;;&#xd;
+&#xd;
   var v_telefonecelular = hAPI.getCardValue(&quot;telefonecelular&quot;) + &quot;&quot;;&#xd;
+&#xd;
+  v_telefonecelular = v_telefonecelular.replace(&quot;(&quot;, &quot;&quot;);&#xd;
+  v_telefonecelular = v_telefonecelular.replace(&quot;)&quot;, &quot;&quot;);&#xd;
+  v_telefonecelular = v_telefonecelular.replace(&quot;-&quot;, &quot;&quot;);&#xd;
+&#xd;
   var v_telefonefixo = hAPI.getCardValue(&quot;telefonefixo&quot;) + &quot;&quot;;&#xd;
 &#xd;
-  var v_CEP = parseInt(hAPI.getCardValue(&quot;CEP&quot;)) + &quot;&quot;;&#xd;
+  v_telefonefixo = v_telefonefixo.replace(&quot;(&quot;, &quot;&quot;);&#xd;
+  v_telefonefixo = v_telefonefixo.replace(&quot;)&quot;, &quot;&quot;);&#xd;
+  v_telefonefixo = v_telefonefixo.replace(&quot;-&quot;, &quot;&quot;);&#xd;
+&#xd;
+  var v_CEP = hAPI.getCardValue(&quot;CEP&quot;) + &quot;&quot;;&#xd;
+&#xd;
+  v_CEP = v_CEP.replace(&quot;-&quot;, &quot;&quot;);&#xd;
+&#xd;
   var v_estado = hAPI.getCardValue(&quot;estado&quot;) + &quot;&quot;;&#xd;
   var v_cidade = hAPI.getCardValue(&quot;cidade&quot;) + &quot;&quot;;&#xd;
   var v_bairro = hAPI.getCardValue(&quot;bairro&quot;) + &quot;&quot;;&#xd;
   var v_rua = hAPI.getCardValue(&quot;rua&quot;) + &quot;&quot;;&#xd;
-&#xd;
+  &#xd;
   try {&#xd;
-    var clientService = fluigAPI.getAuthorizeClientService();&#xd;
-    var dados = {&#xd;
-      &quot;tt-fornecedor&quot;: [&#xd;
-        {&#xd;
-          cCgc: v_CPF,&#xd;
-          cNome: v_nomecompleto,&#xd;
-          nomeAbrev: v_nomeabreviado,&#xd;
-          cEmail: v_email,&#xd;
-          cFoneCel: v_telefonecelular,&#xd;
-          cFoneFixo: v_telefonefixo,&#xd;
-          iCep: v_CEP,&#xd;
-          cUF: v_estado,&#xd;
-          cCicade: v_cidade,&#xd;
-          cBairro: v_bairro,&#xd;
-          cRua: v_rua,&#xd;
-        },&#xd;
-      ],&#xd;
-    };&#xd;
+	    var clientService = fluigAPI.getAuthorizeClientService();&#xd;
+	    var dados = {&#xd;
+	      &quot;tt-fornecedor&quot;: [&#xd;
+	        {&#xd;
+	          cCgc: v_CPF,&#xd;
+	          cNome: v_nomecompleto,&#xd;
+	          nomeAbrev: v_nomeabreviado,&#xd;
+	          cEmail: v_email,&#xd;
+	          cFoneCel: v_telefonecelular,&#xd;
+	          cFoneFixo: v_telefonefixo,&#xd;
+	          iCep: v_CEP,&#xd;
+	          cUF: v_estado,&#xd;
+	          cCicade: v_cidade,&#xd;
+	          cBairro: v_bairro,&#xd;
+	          cRua: v_rua,&#xd;
+	        },&#xd;
+	      ],&#xd;
+	    };&#xd;
 &#xd;
-    var data = {&#xd;
-      companyId: getValue(&quot;WKCompany&quot;) + &quot;&quot;,&#xd;
-      serviceCode: &quot;apiDatasul&quot;,&#xd;
-      endpoint:&#xd;
-        &quot;/dts/datasul-rest/resources/prg/esp/v1/esrest0001/implantaFornecedor&quot;,&#xd;
-      method: &quot;post&quot;, &#xd;
-      timeoutService: &quot;100&quot;, &#xd;
+	    var data = {&#xd;
+	      companyId: getValue(&quot;WKCompany&quot;) + &quot;&quot;,&#xd;
+	      serviceCode: &quot;apiDatasul&quot;,&#xd;
+	      endpoint:&#xd;
+	        &quot;/dts/datasul-rest/resources/prg/esp/v1/esrest0001/implantaFornecedor&quot;,&#xd;
+	      method: &quot;post&quot;, &#xd;
+	      timeoutService: &quot;100&quot;, &#xd;
 &#xd;
-      options: {&#xd;
-        encoding: &quot;UTF-8&quot;,&#xd;
-        mediaType: &quot;application/json&quot;,&#xd;
-        //useSSL:true,&#xd;
-        //crossDomain: true&#xd;
-      },&#xd;
+	      options: {&#xd;
+	        encoding: &quot;UTF-8&quot;,&#xd;
+	        mediaType: &quot;application/json&quot;,&#xd;
+	        //useSSL:true,&#xd;
+	        //crossDomain: true&#xd;
+	      },&#xd;
 &#xd;
-      headers: {&#xd;
-        &quot;Content-Type&quot;: &quot;application/json&quot;,&#xd;
-      },&#xd;
+	      headers: {&#xd;
+	        &quot;Content-Type&quot;: &quot;application/json&quot;,&#xd;
+	      },&#xd;
 &#xd;
-      params: dados,&#xd;
-    };&#xd;
+	      params: dados,&#xd;
+	    };&#xd;
 &#xd;
-    hAPI.setTaskComments(&#xd;
-      getValue(&quot;WKUser&quot;),&#xd;
-      getValue(&quot;WKNumProces&quot;),&#xd;
-      0,&#xd;
-      JSON.stringify(data)&#xd;
-    );&#xd;
+	    hAPI.setTaskComments(&#xd;
+	      getValue(&quot;WKUser&quot;),&#xd;
+	      getValue(&quot;WKNumProces&quot;),&#xd;
+	      0,&#xd;
+	      JSON.stringify(data)&#xd;
+	    );&#xd;
 &#xd;
-    clientOauth = clientService.invoke(JSON.stringify(data));&#xd;
+	    clientOauth = clientService.invoke(JSON.stringify(data));&#xd;
 &#xd;
-    var result = clientOauth.getResult();&#xd;
+	    var result = clientOauth.getResult();&#xd;
 &#xd;
-    hAPI.setTaskComments(&#xd;
-      getValue(&quot;WKUser&quot;),&#xd;
-      getValue(&quot;WKNumProces&quot;),&#xd;
-      0,&#xd;
-      clientOauth.getHttpStatusResult()&#xd;
-    );&#xd;
+	    hAPI.setTaskComments(&#xd;
+	      getValue(&quot;WKUser&quot;),&#xd;
+	      getValue(&quot;WKNumProces&quot;),&#xd;
+	      0,&#xd;
+	      clientOauth.getHttpStatusResult()&#xd;
+	    );&#xd;
 &#xd;
-    hAPI.setCardValue(&quot;statusIntegracao&quot;, clientOauth.getHttpStatusResult());&#xd;
+	    hAPI.setCardValue(&quot;statusIntegracao&quot;, clientOauth.getHttpStatusResult());&#xd;
 &#xd;
-    if (result == null || result.isEmpty()) {&#xd;
-      hAPI.setTaskComments(&#xd;
-        getValue(&quot;WKUser&quot;),&#xd;
-        getValue(&quot;WKNumProces&quot;),&#xd;
-        0,&#xd;
-        &quot;retorno vazio&quot;&#xd;
-      );&#xd;
+	    if (result == null || result.isEmpty()) {&#xd;
+	      hAPI.setTaskComments(&#xd;
+	        getValue(&quot;WKUser&quot;),&#xd;
+	        getValue(&quot;WKNumProces&quot;),&#xd;
+	        0,&#xd;
+	        &quot;retorno vazio&quot;&#xd;
+	      );&#xd;
 &#xd;
-      hAPI.setCardValue(&quot;codFornecedorIntegracao&quot;, &quot;&quot;);&#xd;
-      hAPI.setCardValue(&#xd;
-        &quot;RespostaIntegracao&quot;,&#xd;
-        clientOauth.getHttpStatusResult() + &quot; - &quot; + clientOauth.getDescription()&#xd;
-      );&#xd;
-    } else {&#xd;
-      var result = JSON.parse(clientOauth.getResult());&#xd;
+	      hAPI.setCardValue(&quot;codFornecedorIntegracao&quot;, &quot;&quot;);&#xd;
+	      hAPI.setCardValue(&#xd;
+	        &quot;RespostaIntegracao&quot;,&#xd;
+	        clientOauth.getHttpStatusResult() + &quot; - &quot; + clientOauth.getDescription()&#xd;
+	      );&#xd;
+	    } else {&#xd;
+	      var result = JSON.parse(clientOauth.getResult());&#xd;
 &#xd;
-      hAPI.setTaskComments(&#xd;
-        getValue(&quot;WKUser&quot;),&#xd;
-        getValue(&quot;WKNumProces&quot;),&#xd;
-        0,&#xd;
-        result&#xd;
-      );&#xd;
+	      hAPI.setTaskComments(&#xd;
+	        getValue(&quot;WKUser&quot;),&#xd;
+	        getValue(&quot;WKNumProces&quot;),&#xd;
+	        0,&#xd;
+	        result&#xd;
+	      );&#xd;
+	      &#xd;
+	      log.info(&quot;status retorno integração &quot; + clientOauth.getHttpStatusResult());&#xd;
+	      &#xd;
+	      if (clientOauth.getHttpStatusResult() == 302) {&#xd;
+	        hAPI.setCardValue(&quot;RespostaIntegracao&quot;, result.tt - msg[0].descMsg);&#xd;
 &#xd;
-      if (clientOauth.getHttpStatusResult() == 200) {&#xd;
-        hAPI.setCardValue(&quot;RespostaIntegracao&quot;, result.tt - msg[0].descMsg);&#xd;
+	        if (result.tt - msg[0].codFornec == null)&#xd;
+	          hAPI.setCardValue(&quot;codFornecedorIntegracao&quot;, &quot;&quot;);&#xd;
+	        else&#xd;
+	          hAPI.setCardValue(&quot;RespostaIntegracao&quot;, result.tt - msg[0].codFornec);&#xd;
+	      } else {&#xd;
+	        hAPI.setCardValue(&quot;codFornecedorIntegracao&quot;, &quot;&quot;);&#xd;
+	        hAPI.setCardValue(&#xd;
+	          &quot;RespostaIntegracao&quot;,&#xd;
+	          clientOauth.getHttpStatusResult() +&#xd;
+	            &quot; - &quot; +&#xd;
+	            clientOauth.getDescription()&#xd;
+	        );&#xd;
+	      }&#xd;
+	    }&#xd;
 &#xd;
-        if (result.tt - msg[0].codFornec == null)&#xd;
-          hAPI.setCardValue(&quot;codFornecedorIntegracao&quot;, &quot;&quot;);&#xd;
-        else&#xd;
-          hAPI.setCardValue(&quot;RespostaIntegracao&quot;, result.tt - msg[0].codFornec);&#xd;
-      } else {&#xd;
-        hAPI.setCardValue(&quot;codFornecedorIntegracao&quot;, &quot;&quot;);&#xd;
-        hAPI.setCardValue(&#xd;
-          &quot;RespostaIntegracao&quot;,&#xd;
-          clientOauth.getHttpStatusResult() +&#xd;
-            &quot; - &quot; +&#xd;
-            clientOauth.getDescription()&#xd;
-        );&#xd;
-      }&#xd;
-    }&#xd;
+	    log.info(&quot;result: &quot; + result);&#xd;
+	  } catch (e) {&#xd;
+	    log.error(&quot;Ocorreu um erro incluir no Datasul: &quot; + e);&#xd;
 &#xd;
-    log.info(&quot;result: &quot; + result);&#xd;
-  } catch (e) {&#xd;
-    log.error(&quot;Ocorreu um erro incluir no Datasul: &quot; + e);&#xd;
-&#xd;
-    hAPI.setCardValue(&quot;statusIntegracao&quot;, &quot;999&quot;);&#xd;
-    hAPI.setCardValue(&quot;RespostaIntegracao&quot;, e.message);&#xd;
-  }&#xd;
+	    hAPI.setCardValue(&quot;statusIntegracao&quot;, &quot;999&quot;);&#xd;
+	    hAPI.setCardValue(&quot;RespostaIntegracao&quot;, e.message);&#xd;
+	  }&#xd;
 }&#xd;
 </eventDescription>
     </WorkflowProcessEvent>
@@ -828,7 +848,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>40</version>
+        <version>45</version>
         <linkSequence>11</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -839,7 +859,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>40</version>
+        <version>45</version>
         <linkSequence>20</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -850,7 +870,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>40</version>
+        <version>45</version>
         <linkSequence>20</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -861,7 +881,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>40</version>
+        <version>45</version>
         <linkSequence>22</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -872,7 +892,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>40</version>
+        <version>45</version>
         <linkSequence>29</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -883,7 +903,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>40</version>
+        <version>45</version>
         <linkSequence>29</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -894,7 +914,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>processo_cadastro_pessoa_fisica</processId>
-        <version>40</version>
+        <version>45</version>
         <linkSequence>31</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -924,7 +944,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>40</processVersion>
+      <processVersion>45</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -934,7 +954,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>40</processVersion>
+      <processVersion>45</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -944,7 +964,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>40</processVersion>
+      <processVersion>45</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -954,7 +974,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>40</processVersion>
+      <processVersion>45</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -964,7 +984,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>processo_cadastro_pessoa_fisica</processId>
-      <processVersion>40</processVersion>
+      <processVersion>45</processVersion>
       <stateSequence>9</stateSequence>
       <appKey>approval</appKey>
       <appField>reject</appField>
