@@ -1,13 +1,25 @@
 function servicetask19() {
   var v_CPF = hAPI.getCardValue("CPF") + "";
-  
-  v_CPF = v_CPF.replace(".","").replace(".","").replace("-","");
-  
+
+  v_CPF = v_CPF.replace(".", "").replace(".", "").replace("-", "");
+
   var v_nomeabreviado = hAPI.getCardValue("nomeabreviado") + "";
   var v_nomecompleto = hAPI.getCardValue("nomecompleto") + "";
   var v_email = hAPI.getCardValue("email") + "";
+
   var v_telefonecelular = hAPI.getCardValue("telefonecelular") + "";
+
+  v_telefonecelular = v_telefonecelular
+    .replace("(", "")
+    .replace(")", "")
+    .replace("-", "");
+
   var v_telefonefixo = hAPI.getCardValue("telefonefixo") + "";
+
+  v_telefonefixo = v_telefonefixo
+    .replace("(", "")
+    .replace(")", "")
+    .replace("-", "");
 
   var v_CEP = parseInt(hAPI.getCardValue("CEP")) + "";
   var v_estado = hAPI.getCardValue("estado") + "";
@@ -17,21 +29,20 @@ function servicetask19() {
 
   try {
     var clientService = fluigAPI.getAuthorizeClientService();
-        
-    
+
     var dados = {
-          cCgc: V_CPF,
-          cNome: v_nomecompleto,
-          nomeAbrev: v_nomeabreviado,
-          cEmail: v_email,
-          cFoneCel: v_telefonecelular,
-          cFoneFixo: v_telefonefixo,
-          iCep: v_CEP,
-          cUF: v_estado,
-          cCidade: v_cidade,
-          cBairro: v_bairro,
-          //iNum: 999, //provisorio
-          cRua: v_rua,
+      cCgc: v_CPF,
+      cNome: v_nomecompleto,
+      nomeAbrev: v_nomeabreviado,
+      cEmail: v_email,
+      cFoneCel: v_telefonecelular,
+      cFoneFixo: v_telefonefixo,
+      iCep: v_CEP,
+      cUF: v_estado,
+      cCidade: v_cidade,
+      cBairro: v_bairro,
+      //iNum: 999, //provisorio
+      cRua: v_rua,
     };
 
     var data = {
@@ -39,14 +50,14 @@ function servicetask19() {
       serviceCode: "apiDatasul",
       endpoint:
         "/dts/datasul-rest/resources/prg/esp/v1/esrest0001/implantaFornecedor",
-      method: "post", 
-      timeoutService: "100", 
+      method: "post",
+      timeoutService: "100",
 
       options: {
         encoding: "UTF-8",
         mediaType: "application/json",
         //useSSL:true,
-        crossDomain: true
+        crossDomain: true,
       },
 
       headers: {
